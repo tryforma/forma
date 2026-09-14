@@ -7,13 +7,13 @@
       "forma",
       "com.googleusercontent.apps.311242226872-4jrv4kndh6j0s974u1h0uqbj4bvmp3af"
     ],
-    "version": "1.6",
+    "version": "1.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": false,
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#288752"
     },

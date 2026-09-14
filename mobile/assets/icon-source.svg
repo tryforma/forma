@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3FB878"/><stop offset="0.55" stop-color="#27925C"/><stop offset="1" stop-color="#0F5734"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.3" cy="0.22" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="disc" x1="0.15" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/><stop offset="1" stop-color="#F5E7CE"/>
+    </linearGradient>
+    <filter id="ds" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="26" flood-color="#062B18" flood-opacity="0.4"/></filter>
+    <mask id="bites">
+      <rect width="1024" height="1024" fill="#000"/>
+      <circle cx="512.0" cy="528.0" r="332.0" fill="#fff"/>
+      <circle cx="824.0" cy="418.0" r="102.0" fill="#000"/>
+      <circle cx="713.0" cy="277.0" r="86.0" fill="#000"/>
+      <circle cx="600.0" cy="212.0" r="58.0" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+  <g filter="url(#ds)"><rect width="1024" height="1024" fill="url(#disc)" mask="url(#bites)"/></g>
+</svg>
