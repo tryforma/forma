@@ -1,0 +1,32 @@
+# Uploads a previously built Nibble IPA (artifact `nibble-ios-ipa` from an ios-build run) straight to
+# App Store Connect with Apple's altool, bypassing the EAS submission queue.
+name: Nibble iOS upload (altool)
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: ios-build run id whose nibble-ios-ipa artifact should be uploaded
+        required: true
+
+concurrency:
+  group: nibble-ios-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: nibble-ios-ipa
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload to App Store Connect
+        run: |
+          mkdir -p ~/.appstoreconnect/private_keys
+          printf '%s\n' "${{ secrets.ASC_API_KEY_P8 }}" > ~/.appstoreconnect/private_keys/AuthKey_638BMBPA45.p8
+          ls -la nibble-ios.ipa
+          xcrun altool --validate-app -f nibble-ios.ipa -t ios --apiKey 638BMBPA45 --apiIssuer f6b1c22d-c20b-471b-9c5d-fb9619390dc8
+          xcrun altool --upload-app -f nibble-ios.ipa -t ios --apiKey 638BMBPA45 --apiIssuer f6b1c22d-c20b-471b-9c5d-fb9619390dc8
