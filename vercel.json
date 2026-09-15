@@ -17,6 +17,10 @@
             "destination": "/api/comments?fn=world"
         },
         {
+            "source": "/api/waitlist",
+            "destination": "/api/comments?fn=waitlist"
+        },
+        {
             "source": "/api/(.*)",
             "destination": "/api/$1"
         },

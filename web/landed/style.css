@@ -34,3 +34,22 @@ li { margin: 8px 0; }
 footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--soft); }
 footer a { color: var(--accent); }
 small.updated { color: var(--soft); display: block; margin-bottom: 30px; }
+
+/* Waitlist */
+.wl { margin-top: 26px; padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: 16px; }
+.wl-lead { color: var(--ink); margin-bottom: 14px; }
+.wl-count { color: var(--accent); font-weight: 700; }
+.wl-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.wl-input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink); }
+.wl-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.wl-btn { margin-top: 0; padding: 13px 22px; border: 0; cursor: pointer; font: inherit; font-weight: 700; }
+.wl-btn:disabled { opacity: .6; cursor: default; }
+.wl-stage { border: 0; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.wl-stage legend { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.wl-stage label { font-size: 15px; color: var(--soft); display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.wl-stage input { accent-color: var(--accent); }
+.wl-note { width: 100%; margin-top: 14px; }
+.wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.wl-msg { min-height: 1.4em; margin-top: 10px; font-size: 15px; color: var(--warm); }
+.wl-msg.is-ok { color: var(--accent); }
+.cmt { margin-top: 56px; }

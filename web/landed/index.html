@@ -64,7 +64,22 @@
     <span class="pill">Life after GLP-1</span>
     <h1>You lost the weight.<br/>Now stick the landing.</h1>
     <p class="lede">Most people who stop a GLP-1 put the weight back on within a year, and faster than they expected. Landed is the quiet system for the part after: a radar that catches the drift early, a twelve-week plan that keeps you steady, and no number you have to beat except last month’s.</p>
-    <a class="cta" href="https://apps.apple.com/app/id6807656743">Download on the App Store — launching this week</a>
+    <form class="wl" id="waitlist" novalidate>
+      <p class="wl-lead"><b>Not on the App Store yet.</b> Leave your email and you get one message the day it is live, and nothing else. <span class="wl-count" id="wl-count" aria-live="polite"></span></p>
+      <div class="wl-row">
+        <input class="wl-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address" />
+        <button class="cta wl-btn" type="submit">Join the waitlist</button>
+      </div>
+      <fieldset class="wl-stage"><legend>Where are you right now?</legend>
+        <label><input type="radio" name="stage" value="on" /> Still on it</label>
+        <label><input type="radio" name="stage" value="tapering" /> Tapering</label>
+        <label><input type="radio" name="stage" value="stopped" /> Stopped</label>
+        <label><input type="radio" name="stage" value="considering" /> Thinking about stopping</label>
+      </fieldset>
+      <input class="wl-input wl-note" type="text" name="note" maxlength="300" placeholder="Optional: what worries you most about coming off?" aria-label="What worries you most about coming off?" />
+      <input class="wl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <p class="wl-msg" id="wl-msg" role="status"></p>
+    </form>
 
     <h2>Built for the off-ramp</h2>
     <div class="card"><h3>📡 Rebound Radar</h3><p>A 30-second daily check-in feeds an early-warning score that catches appetite rebound and weight drift weeks before the scale confirms it.</p></div>
@@ -73,6 +88,8 @@
 
     <h2>Why now</h2>
     <p>Coming off semaglutide or tirzepatide flips powerful biology against you: hunger hormones rebound, fullness fades, metabolism runs slightly slower. Willpower isn't a plan. Structure is.</p>
+
+    <div data-comments="Coming off a GLP-1? Say what you would want from this."></div>
 
     <footer>
       Landed is a behavioral companion, not medical care. Always follow your prescriber's guidance about medication.<br/><br/>
@@ -91,5 +108,39 @@
     <div class="fz-legal">&copy; 2026 Forma &middot; <span class="est">Est. 2026</span> &middot; All rights reserved.</div>
   </div>
 </footer>
+<script src="/assets/comments.js" defer></script>
+<script>
+(function () {
+  var API = '/api/waitlist', PRODUCT = 'landed';
+  var form = document.getElementById('waitlist'), msg = document.getElementById('wl-msg'), countEl = document.getElementById('wl-count');
+  function showCount(n) {
+    n = Number(n) || 0;
+    countEl.textContent = n === 0 ? 'You would be the first.' : n === 1 ? '1 person is waiting.' : n + ' people are waiting.';
+  }
+  function post(body) {
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.status === 204 ? {} : r.json().catch(function () { return {}; }).then(function (d) { if (!r.ok) { var e = new Error(d.error || 'http'); e.code = d.error; throw e; } return d; }); });
+  }
+  fetch(API + '?product=' + PRODUCT).then(function (r) { return r.json(); }).then(function (d) { showCount(d.count); }).catch(function () {});
+  try { if (!sessionStorage.getItem('wl_viewed')) { sessionStorage.setItem('wl_viewed', '1'); post({ action: 'view', product: PRODUCT }).catch(function () {}); } } catch (e) { post({ action: 'view', product: PRODUCT }).catch(function () {}); }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = form.email.value.trim();
+    msg.className = 'wl-msg'; msg.textContent = '';
+    if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)) { msg.textContent = 'That email does not look right.'; form.email.focus(); return; }
+    var stage = form.querySelector('input[name=stage]:checked');
+    var btn = form.querySelector('button'); btn.disabled = true;
+    post({ product: PRODUCT, email: email, stage: stage ? stage.value : '', note: form.note.value.trim(), honeypot: form.website.value })
+      .then(function (d) {
+        showCount(d.count);
+        msg.className = 'wl-msg is-ok';
+        msg.textContent = d.created ? 'You are on the list. One email, the day it is live.' : 'You were already on the list. Updated.';
+        form.email.value = ''; form.note.value = '';
+      }, function (e) {
+        msg.textContent = e.code === 'rate_limited' ? 'Too many tries. Give it a few minutes.' : e.code === 'bad_email' ? 'That email does not look right.' : e.code === 'links_not_allowed' ? 'No links in the note, please.' : 'Could not save that. Try again in a moment.';
+      }).then(function () { btn.disabled = false; });
+  });
+})();
+</script>
 </body>
 </html>

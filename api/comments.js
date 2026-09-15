@@ -29,6 +29,8 @@ import crypto from 'crypto';
 // /api/world (rewritten here in vercel.json) shares this function because a
 // Hobby deployment is capped at 12 serverless functions and we are at the cap.
 import { handleWorld } from './_world/board.js';
+// /api/waitlist (product waitlists + view beacon) shares it for the same reason.
+import { handleWaitlist } from './_waitlist/handler.js';
 
 const SUPABASE_URL = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || '';
@@ -62,7 +64,18 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   try {
-    if (queryOf(req).fn === 'world') {
+    const fn = queryOf(req).fn;
+    if (fn === 'waitlist') {
+      return await handleWaitlist(req, res, {
+        rpc,
+        storageConfigured,
+        underCap,
+        ipHash: hashIp(clientIp(req)),
+        queryOf,
+        parseBody,
+      });
+    }
+    if (fn === 'world') {
       return await handleWorld(req, res, {
         rpc,
         storageConfigured,
