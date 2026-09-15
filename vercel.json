@@ -27,7 +27,7 @@
     ],
     "redirects": [
         {
-            "source": "/paths/:rest*",
+            "source": "/paths/(.*)",
             "destination": "/",
             "permanent": true
         }
