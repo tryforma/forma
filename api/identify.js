@@ -7,10 +7,12 @@
 // Request (POST, JSON): { "image": "<base64>", "mime": "image/jpeg" }
 // Header:               x-lapis-app: lapis_v1_9f3ac   (casual-abuse deterrent)
 // Env (Vercel):         GEMINI_API_KEY   (a.k.a. Google AI Studio key)
-//                       FIREBASE_SERVICE_ACCOUNT (optional; enables IP rate cap)
-
-import { initializeApp, cert, getApps } from 'firebase-admin/app';
-import { getFirestore, FieldValue } from 'firebase-admin/firestore';
+//                       SUPABASE_URL, SUPABASE_ANON_KEY (enable the IP rate cap)
+//
+// The cap used to run on Firestore, which needs a service-account credential
+// that was never set in production, so every call logged "Could not load the
+// default credentials" and the cap failed open. Supabase is already configured
+// for this project, so the counter lives there now (RPC: rate_hit).
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_AI_API_KEY;
 const MODEL = 'gemini-2.5-flash';
@@ -19,17 +21,8 @@ const HOURLY_IP_CAP = 40;
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_OUTPUT_TOKENS = 2048; // keep base64 body under Vercel's ~4.5MB limit
 
-if (getApps().length === 0) {
-  try {
-    if (process.env.FIREBASE_SERVICE_ACCOUNT) {
-      initializeApp({ credential: cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)) });
-    } else {
-      initializeApp({ projectId: 'forma-3803d' });
-    }
-  } catch (e) {
-    console.error('firebase init failed:', e);
-  }
-}
+const SUPABASE_URL = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || '';
 
 const PROMPT = `You are a friendly expert geologist and gemologist. Identify the single most prominent rock, mineral, crystal, gemstone or fossil in the photo.
 
@@ -139,17 +132,28 @@ function parseIdentification(text) {
   }
 }
 
+// Supabase-backed hourly IP counter. Fails open: a counter outage must not
+// take identification down with it.
 async function underHourlyCap(ip) {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return true;
   try {
     const hour = new Date().toISOString().slice(0, 13);
-    const ref = getFirestore().collection('lapisUsage').doc(`${ip}_${hour}`);
-    const snap = await ref.get();
-    const count = snap.exists ? snap.data().count || 0 : 0;
-    if (count >= HOURLY_IP_CAP) return false;
-    await ref.set({ count: FieldValue.increment(1), hour, ip }, { merge: true });
-    return true;
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/rpc/rate_hit`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ p_key: `lapis:${ip}:${hour}`, p_limit: HOURLY_IP_CAP, p_window_seconds: 3600 }),
+    });
+    if (!r.ok) {
+      console.error('rate_hit failed (failing open):', r.status, await r.text());
+      return true;
+    }
+    return (await r.json()) !== false;
   } catch (e) {
     console.error('rate counter error (failing open):', e);
-    return true; // fail open — a counter outage must not break the app
+    return true;
   }
 }
