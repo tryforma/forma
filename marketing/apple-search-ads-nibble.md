@@ -1,4 +1,4 @@
-# Nibble — Apple Search Ads launch plan ($100 promo credit; Ray, Sep 16 2026: "start running apple ads for whatever is already out")
+# Nibble — Apple Search Ads launch plan — LIVE Sep 16 2026, campaign ID 2144691217 ($100 promo credit; Ray, Sep 16 2026: "start running apple ads for whatever is already out")
 
 Account: Apple Ads "Macra_ads" (id 23872540). The $100 credit was earmarked for Landed (Sep 3) then Lapis
 (Sep 9); on Sep 16 Ray redirected it to whatever is live, and only Nibble is live (1.7, READY_FOR_SALE).
@@ -36,3 +36,10 @@ restaurant, menu, printable, chart, pdf, calculator only
 - If a keyword gets ≥ 2 installs under $4 each, raise its CPT 20%.
 - At $100 spent: report installs, CPI, trial starts (RevenueCat), which ad group won.
 - The credit is gone after this; a Lapis campaign later needs new money or Ray's say-so.
+
+## Status (Sep 16 2026)
+- Campaign 2144691217 "Nibble - US - Search - Exact" RUNNING in account Macra_ads 23872540.
+- Apple Ads no longer offers a lifetime budget, so the cap is the END DATE: Sep 16 → Sep 24 2026 12:00 AM PT, 8 days × $10/day = $80 nominal (kept under the $100 credit on purpose).
+- All three ad groups Running, Search Match OFF, iPhone only, new users, age 18–65+, default product page:
+  AI photo intent (15 exact kws @ $2.00) · macro / protein (10 @ $1.50) · competitor overflow (6 @ $1.50). 18 campaign negatives.
+- Pre-existing "Macra - US - Search - Exact" campaign in the same account stays PAUSED.
