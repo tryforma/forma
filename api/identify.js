@@ -16,7 +16,8 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_AI_API_K
 const MODEL = 'gemini-2.5-flash';
 const APP_TOKEN = 'lapis_v1_9f3ac';
 const HOURLY_IP_CAP = 40;
-const MAX_IMAGE_BYTES = 3 * 1024 * 1024; // keep base64 body under Vercel's ~4.5MB limit
+const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
+const MAX_OUTPUT_TOKENS = 2048; // keep base64 body under Vercel's ~4.5MB limit
 
 if (getApps().length === 0) {
   try {
@@ -67,40 +68,74 @@ export default async function handler(req, res) {
   if (!(await underHourlyCap(ip))) return res.status(429).json({ error: 'rate_limited' });
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
-    const gRes = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              { text: PROMPT },
-              { inline_data: { mime_type: mime || 'image/jpeg', data: image } },
-            ],
-          },
-        ],
-        generationConfig: { responseMimeType: 'application/json', temperature: 0.3, maxOutputTokens: 900 },
-      }),
-    });
-    if (!gRes.ok) {
-      console.error('gemini error', gRes.status, await gRes.text());
-      return res.status(502).json({ error: 'upstream' });
-    }
-    const data = await gRes.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    let parsed;
-    try {
-      parsed = JSON.parse(text);
-    } catch {
-      const m = text.match(/\{[\s\S]*\}/);
-      parsed = m ? JSON.parse(m[0]) : null;
+    // Gemini 2.5 Flash "thinks" by default and those hidden tokens count against
+    // maxOutputTokens; with a small cap the JSON came back truncated and the
+    // app showed a connection error (App Review 2.1(a), Sep 16 2026). Thinking
+    // is off, the cap is generous, and a truncated/unparseable reply is retried.
+    let parsed = null;
+    for (let attempt = 0; attempt < 2 && !parsed; attempt++) {
+      const { text, finishReason, status, errText } = await callGemini(image, mime, attempt === 0 ? 0.3 : 0.1);
+      if (status !== 200) {
+        console.error('gemini error', status, errText);
+        if (attempt === 1) return res.status(502).json({ error: 'upstream' });
+        continue;
+      }
+      parsed = parseIdentification(text);
+      if (!parsed) console.error('identify unparseable (attempt ' + (attempt + 1) + ', finish ' + finishReason + '):', String(text).slice(0, 200));
     }
     if (!parsed) return res.status(502).json({ error: 'unparseable' });
     return res.status(200).json(parsed);
   } catch (e) {
     console.error('identify failed:', e);
     return res.status(500).json({ error: 'internal' });
+  }
+}
+
+export const maxDuration = 60;
+
+async function callGemini(image, mime, temperature) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+  const gRes = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [
+            { text: PROMPT },
+            { inline_data: { mime_type: mime || 'image/jpeg', data: image } },
+          ],
+        },
+      ],
+      generationConfig: {
+        responseMimeType: 'application/json',
+        temperature,
+        maxOutputTokens: MAX_OUTPUT_TOKENS,
+        thinkingConfig: { thinkingBudget: 0 },
+      },
+    }),
+  });
+  if (!gRes.ok) return { status: gRes.status, errText: await gRes.text() };
+  const data = await gRes.json();
+  const cand = data?.candidates?.[0];
+  const text = (cand?.content?.parts || []).map((p) => p.text || '').join('');
+  return { status: 200, text, finishReason: cand?.finishReason || '' };
+}
+
+// Strict parse first; then the largest {...} block; null if neither is valid JSON.
+function parseIdentification(text) {
+  if (!text) return null;
+  try {
+    const v = JSON.parse(text);
+    return v && typeof v === 'object' ? v : null;
+  } catch {}
+  const m = String(text).match(/\{[\s\S]*\}/);
+  if (!m) return null;
+  try {
+    const v = JSON.parse(m[0]);
+    return v && typeof v === 'object' ? v : null;
+  } catch {
+    return null;
   }
 }
 
