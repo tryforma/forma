@@ -69,7 +69,7 @@
      plainly. The plaster stays light in both themes, because plaster is white. ---- */
   .stones-intro{max-width:64ch}
   .stones{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:20px;margin:30px 0 0;padding:0;list-style:none}
-  .stone{position:relative;padding:28px 24px 22px;color:#2f2a23;isolation:isolate;
+  .stone{position:relative;display:flex;flex-direction:column;padding:28px 24px 22px;color:#2f2a23;isolation:isolate;
     background:radial-gradient(120% 80% at 18% 6%,rgba(255,255,255,.95),transparent 58%),radial-gradient(90% 70% at 86% 94%,rgba(84,66,38,.10),transparent 62%),linear-gradient(158deg,#fbf6ec,#e9dfcb);
     border:1px solid rgba(120,100,70,.22);
     border-radius:30px 22px 34px 24px/24px 32px 22px 34px;
@@ -85,7 +85,7 @@
     text-shadow:0 1px 0 rgba(255,255,255,.85)}
   .stone .word{font-family:"Fraunces",Georgia,serif;font-size:clamp(19px,2.3vw,23px);font-weight:600;line-height:1.24;letter-spacing:-.012em;margin:0 0 16px;color:#2b261f;
     text-shadow:0 1px 0 rgba(255,255,255,.85),0 -1px 0 rgba(58,44,20,.07)}
-  .stone cite{display:block;font-style:normal;font-size:12px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:rgba(96,78,50,.82);
+  .stone cite{display:block;margin-top:auto;font-style:normal;font-size:12px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:rgba(96,78,50,.82);
     border-top:1px solid rgba(120,100,70,.22);padding-top:11px}
   @media (prefers-color-scheme:dark){
     .stone{background:radial-gradient(120% 80% at 18% 6%,rgba(255,252,244,.9),transparent 58%),radial-gradient(90% 70% at 86% 94%,rgba(60,46,24,.16),transparent 62%),linear-gradient(158deg,#efe7d6,#d9cdb4);
@@ -132,7 +132,23 @@
   <p class="altar-lede">This page is not selling you anything. It has been set aside.</p>
   <p class="altar-lede">If you came here looking for the apps, they are still here and they are one tap away. Stay a minute first.</p>
   <p class="set-aside">An altar &middot; tryforma.app</p>
-  <a class="altar-scroll" href="#who">Who He is <span aria-hidden="true">&darr;</span></a>
+  <a class="altar-scroll" href="#stones">The stones <span aria-hidden="true">&darr;</span></a>
+</div></section>
+
+<section class="section" id="stones"><div class="wrap">
+  <span class="eyebrow">Deuteronomy 27</span>
+  <h2>Great stones, plaistered, written on very plainly.</h2>
+  <p class="stones-intro">When Israel came over Jordan they were told to do a strange, physical thing before anything else: <em>&ldquo;Thou shalt set thee up great stones, and plaister them with plaister: And thou shalt write upon them all the words of this law very plainly.&rdquo;</em> Not a scroll, not a sermon. Stones, whitewashed, standing in the open where everybody walking past has to read them. Joshua did it again at Ebal, and twelve more were carried up out of the riverbed at Gilgal so that when a child asked what they meant, there was something to point at.</p>
+  <p class="stones-intro">So here are ours. Coated white, set upright, written plainly, meant to be read on the way past rather than studied.</p>
+  <ol class="stones">
+    <li class="stone"><span class="n">Stone 1</span><p class="word">Do not look to the past.</p><cite>Isaiah 43:18 &middot; Philippians 3:13</cite></li>
+    <li class="stone"><span class="n">Stone 2</span><p class="word">Do not be given to gluttony.</p><cite>Proverbs 23:2 &middot; Philippians 3:19</cite></li>
+    <li class="stone"><span class="n">Stone 3</span><p class="word">Ask, and you shall receive. Knock, and it shall be opened.</p><cite>Matthew 7:7 &middot; Luke 11:9</cite></li>
+    <li class="stone"><span class="n">Stone 4</span><p class="word">Whatever you ask in prayer, believe you have received it, and it shall be yours.</p><cite>Mark 11:24</cite></li>
+    <li class="stone"><span class="n">Stone 5</span><p class="word">Set aside a tenth of your produce in the third year, so others eat in your town and are satisfied.</p><cite>Deuteronomy 14:28&ndash;29 &middot; Deuteronomy 26:12</cite></li>
+    <li class="stone"><span class="n">Stone 6</span><p class="word">Do not measure yourself against eight people.</p><cite>2 Corinthians 10:12</cite></li>
+  </ol>
+  <p class="note" style="margin-top:26px;max-width:66ch">More stones as they are given. If one of these is the one you needed today, it is yours; take it off the wall and carry it out.</p>
 </div></section>
 
 <section class="section" id="who"><div class="wrap narrow">
@@ -201,28 +217,6 @@
   <p class="ask">Which leaves the one question still worth asking. What will you do with a life that has already been paid for?</p>
   <p class="cadence">The Spirit is the seal on that receipt. He was given as the proof it was paid.</p>
   <div class="status-row"><a class="btn" href="#ask">Ask Him</a><a class="btn ghost" href="/lantern/">Seven minutes tomorrow morning</a></div>
-</div></section>
-
-<section class="section" id="stones"><div class="wrap">
-  <span class="eyebrow">Deuteronomy 27</span>
-  <h2>Twelve great stones, plaistered, written on very plainly.</h2>
-  <p class="stones-intro">When Israel came over Jordan they were told to do a strange, physical thing before anything else: <em>&ldquo;Thou shalt set thee up great stones, and plaister them with plaister: And thou shalt write upon them all the words of this law very plainly.&rdquo;</em> Not a scroll, not a sermon. Stones, whitewashed, standing in the open where everybody walking past has to read them. Joshua did it again at Ebal, and twelve more were carried up out of the riverbed at Gilgal so that when a child asked what they meant, there was something to point at.</p>
-  <p class="stones-intro">So here are ours. Coated white, set upright, written plainly, meant to be read on the way past rather than studied.</p>
-  <ol class="stones">
-    <li class="stone"><span class="n">Stone 1</span><p class="word">Do not look to the past.</p><cite>Isaiah 43:18 &middot; Philippians 3:13</cite></li>
-    <li class="stone"><span class="n">Stone 2</span><p class="word">Do not be given to gluttony.</p><cite>Proverbs 23:2 &middot; Philippians 3:19</cite></li>
-    <li class="stone"><span class="n">Stone 3</span><p class="word">Ask, and you shall receive. Knock, and it shall be opened.</p><cite>Matthew 7:7 &middot; Luke 11:9</cite></li>
-    <li class="stone"><span class="n">Stone 4</span><p class="word">Whatever you ask in prayer, believe you have received it, and it shall be yours.</p><cite>Mark 11:24</cite></li>
-    <li class="stone"><span class="n">Stone 5</span><p class="word">Set aside a tenth of your produce in the third year, so others eat in your town and are satisfied.</p><cite>Deuteronomy 14:28&ndash;29 &middot; Deuteronomy 26:12</cite></li>
-    <li class="stone"><span class="n">Stone 6</span><p class="word">Do not measure yourself against eight people.</p><cite>2 Corinthians 10:12</cite></li>
-    <li class="stone"><span class="n">Stone 7</span><p class="word">Do the thing in front of you, with your might.</p><cite>Ecclesiastes 9:10</cite></li>
-    <li class="stone"><span class="n">Stone 8</span><p class="word">Tell the truth, starting with the truth about yourself.</p><cite>Ephesians 4:25</cite></li>
-    <li class="stone"><span class="n">Stone 9</span><p class="word">Guard what you look at.</p><cite>Job 31:1 &middot; Matthew 6:22</cite></li>
-    <li class="stone"><span class="n">Stone 10</span><p class="word">Forgive quickly. Carry nothing overnight.</p><cite>Ephesians 4:26 &middot; Colossians 3:13</cite></li>
-    <li class="stone"><span class="n">Stone 11</span><p class="word">Be not afraid. He has not left.</p><cite>Isaiah 41:10 &middot; Hebrews 13:5</cite></li>
-    <li class="stone"><span class="n">Stone 12</span><p class="word">Remember who paid, and live like it.</p><cite>1 Corinthians 6:20</cite></li>
-  </ol>
-  <p class="note" style="margin-top:26px;max-width:66ch">More stones as they are given. If one of these is the one you needed today, it is yours; take it off the wall and carry it out.</p>
 </div></section>
 
 <section class="section" id="wall"><div class="wrap">
