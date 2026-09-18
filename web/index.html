@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Forma — Small apps and plain guides for the long game</title>
-<meta name="description" content="You were never behind; there was never a line. A small studio in California: twenty honest iPhone apps and a world a great deal larger than the eight people you measure yourself against.">
+<title>Come, Holy Spirit — Forma</title>
+<meta name="description" content="An altar to the Holy Spirit. Who He is, what He does, and how to ask — with the promise of Luke 11:13, a prayer you can pray out loud tonight, and a wall where you can leave what you are carrying. Forma is a small studio in California; this page is set aside.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1a16" media="(prefers-color-scheme: dark)">
@@ -12,27 +12,92 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Forma">
 <meta property="og:url" content="https://tryforma.app/">
-<meta property="og:title" content="Forma — Small apps and plain guides for the long game">
-<meta property="og:description" content="You were never behind; there was never a line. A small studio in California: twenty honest iPhone apps and a world a great deal larger than the eight people you measure yourself against.">
+<meta property="og:title" content="Come, Holy Spirit — Forma">
+<meta property="og:description" content="An altar to the Holy Spirit. Who He is, what He does, how to ask, and a place to leave what you are carrying.">
 <meta property="og:image" content="https://tryforma.app/assets/og-forma.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Forma: small, honest tools for the long game.">
+<meta property="og:image:alt" content="Forma: come, Holy Spirit.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Forma — Small apps and plain guides for the long game">
-<meta name="twitter:description" content="You were never behind; there was never a line. A small studio in California: twenty honest iPhone apps and a world a great deal larger than the eight people you measure yourself against.">
+<meta name="twitter:title" content="Come, Holy Spirit — Forma">
+<meta name="twitter:description" content="An altar to the Holy Spirit. Who He is, what He does, how to ask, and a place to leave what you are carrying.">
 <meta name="twitter:image" content="https://tryforma.app/assets/og-forma.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%231f8a5f%27/%3E%3Cstop offset=%271%27 stop-color=%27%230e5e4a%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2732%27 height=%2732%27 rx=%279%27 fill=%27url(%23g)%27/%3E%3Cpath d=%27M9.5 7.5h13.5v3.4h-9.7v4.4h8.2v3.4h-8.2V25H9.5z%27 fill=%27white%27/%3E%3Ccircle cx=%2724.3%27 cy=%2724%27 r=%272.1%27 fill=%27white%27/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="keywords" content="small honest apps, plain guides, the long game, a clean slate, a fresh start, starting over">
+<meta name="keywords" content="come holy spirit, prayer to the holy spirit, who is the holy spirit, the comforter, ask for the holy spirit, luke 11:13, prayer wall">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,0..100&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/world.css">
+<style>
+  /* ---- the altar. Stillness is the whole design brief: more air than anywhere
+     else on the site, one warm light, nothing that moves quickly. ---- */
+  .altar-hero{min-height:calc(100svh - 58px);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:64px 22px 56px}
+  .altar-hero::before{content:"";position:absolute;left:50%;top:38%;width:min(900px,120vw);aspect-ratio:1;transform:translate(-50%,-50%);z-index:-1;pointer-events:none;
+    background:radial-gradient(circle,var(--glow2),transparent 62%)}
+  .altar-hero .wrap{max-width:none;padding:0}
+  .flame{width:54px;height:76px;margin:0 auto 30px;position:relative;filter:drop-shadow(0 0 22px var(--glow2))}
+  .flame svg{width:100%;height:100%;display:block;transform-origin:50% 92%;animation:altar-breathe 5.5s ease-in-out infinite}
+  @keyframes altar-breathe{0%,100%{transform:scaleY(1) scaleX(1)}50%{transform:scaleY(1.06) scaleX(.97)}}
+  .altar-hero h1{font-size:clamp(40px,8vw,76px);letter-spacing:-.03em;line-height:1.02;margin:0 0 22px;max-width:14ch;margin-inline:auto}
+  .altar-lede{font-size:clamp(17px,2.3vw,20px);color:var(--soft);max-width:44ch;margin:0 auto 14px;line-height:1.6}
+  .set-aside{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:36px 0 0}
+  .altar-scroll{display:block;margin-top:26px;color:var(--soft);font-size:13px;text-decoration:none}
+  .altar-scroll:hover{color:var(--accent)}
+
+  .altar-q{font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.28;margin:0 0 20px;max-width:24ch}
+  .names{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+  .names li{padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  .names b{display:block;font-size:17px;letter-spacing:-.01em}
+  .names span{display:block;color:var(--soft);font-size:15px;margin-top:3px}
+  .names i{font-style:normal;color:var(--accent);font-weight:600}
+
+  .prayer{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--panel);border-radius:16px;padding:28px 26px;margin:28px 0 0;
+    box-shadow:0 18px 40px -34px var(--accent-glow)}
+  .prayer p{margin:0 0 13px;font-size:clamp(17px,2.2vw,19px);line-height:1.62}
+  .prayer p:last-child{margin-bottom:0}
+  .prayer .amen{font-weight:700}
+  .ancient{margin-top:26px;color:var(--soft);font-size:15px;max-width:62ch}
+  .ancient q{color:var(--ink);font-style:italic}
+
+  .altar-foot-note{color:var(--soft);font-size:14px;max-width:70ch}
+  .still-here{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--soft);font-size:15px}
+  .still-here a{font-weight:600}
+
+
+  /* ---- Deuteronomy 27: great stones, plaistered with plaister, written on very
+     plainly. The plaster stays light in both themes, because plaster is white. ---- */
+  .stones-intro{max-width:64ch}
+  .stones{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:20px;margin:30px 0 0;padding:0;list-style:none}
+  .stone{position:relative;padding:28px 24px 22px;color:#2f2a23;isolation:isolate;
+    background:radial-gradient(120% 80% at 18% 6%,rgba(255,255,255,.95),transparent 58%),radial-gradient(90% 70% at 86% 94%,rgba(84,66,38,.10),transparent 62%),linear-gradient(158deg,#fbf6ec,#e9dfcb);
+    border:1px solid rgba(120,100,70,.22);
+    border-radius:30px 22px 34px 24px/24px 32px 22px 34px;
+    box-shadow:inset 0 2px 0 rgba(255,255,255,.92),inset 0 -4px 12px rgba(120,100,70,.16),0 20px 38px -24px rgba(0,0,0,.6);
+    transition:transform .4s var(--ease,ease),box-shadow .4s var(--ease,ease)}
+  .stone::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;mix-blend-mode:multiply;opacity:.55;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+  .stone:nth-child(odd){transform:rotate(-.55deg)}
+  .stone:nth-child(even){transform:rotate(.5deg)}
+  .stone:nth-child(3n){transform:rotate(-.2deg)}
+  .stone:hover{transform:rotate(0) translateY(-3px);box-shadow:inset 0 2px 0 rgba(255,255,255,.92),inset 0 -4px 12px rgba(120,100,70,.16),0 26px 44px -24px rgba(0,0,0,.65)}
+  .stone .n{display:block;font-family:"Fraunces",Georgia,serif;font-size:15px;font-weight:600;letter-spacing:.08em;color:rgba(86,70,46,.62);margin:0 0 10px;
+    text-shadow:0 1px 0 rgba(255,255,255,.85)}
+  .stone .word{font-family:"Fraunces",Georgia,serif;font-size:clamp(19px,2.3vw,23px);font-weight:600;line-height:1.24;letter-spacing:-.012em;margin:0 0 16px;color:#2b261f;
+    text-shadow:0 1px 0 rgba(255,255,255,.85),0 -1px 0 rgba(58,44,20,.07)}
+  .stone cite{display:block;font-style:normal;font-size:12px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:rgba(96,78,50,.82);
+    border-top:1px solid rgba(120,100,70,.22);padding-top:11px}
+  @media (prefers-color-scheme:dark){
+    .stone{background:radial-gradient(120% 80% at 18% 6%,rgba(255,252,244,.9),transparent 58%),radial-gradient(90% 70% at 86% 94%,rgba(60,46,24,.16),transparent 62%),linear-gradient(158deg,#efe7d6,#d9cdb4);
+      border-color:rgba(60,48,28,.4);box-shadow:inset 0 2px 0 rgba(255,255,255,.75),inset 0 -4px 12px rgba(90,72,42,.22),0 22px 40px -22px rgba(0,0,0,.85)}
+  }
+  @media (prefers-reduced-motion:reduce){.stone,.stone:hover{transform:none;transition:none}}
+
+  @media (prefers-reduced-motion:reduce){.flame svg{animation:none}}
+</style>
 <script>document.documentElement.classList.add('fz-js')</script>
 <script src="/assets/glow.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Forma", "legalName": "Forma", "url": "https://tryforma.app/", "email": "tryformaapp@gmail.com", "logo": "https://tryforma.app/assets/icons/nibble.png", "description": "A small app studio making honest tools and plain guides for the long game."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Forma", "url": "https://tryforma.app/", "description": "Small, honest tools for the long game. Seventeen routes out, and apps built for ordinary weeks."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Forma", "legalName": "Forma", "url": "https://tryforma.app/", "email": "tryformaapp@gmail.com", "logo": "https://tryforma.app/assets/icons/nibble.png", "description": "A small app studio making honest tools and plain guides for the long game."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Forma", "url": "https://tryforma.app/", "description": "Small, honest tools for the long game, and an altar to the Holy Spirit."}</script>
 </head>
 <body>
 <nav class="fz-nav" aria-label="Site">
@@ -40,8 +105,9 @@
     <a class="fz-brand" href="/"><i aria-hidden="true"></i>Forma</a>
     <ul class="fz-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/#apps" aria-haspopup="true">Apps</a><ul class="fz-dd"><li><a href="/nibble/">Nibble<small>Log meals by photo, voice or barcode</small></a></li><li><a href="/landed/">Landed<small>Keep the weight off after Ozempic</small></a></li><li><a href="/lapis/">Lapis<small>Identify any rock or crystal</small></a></li><li><a href="/wisp/">Wisp<small>Craving SOS &amp; puff tracker</small></a></li><li><a href="/tomorrowyou/">Tomorrow You<small>Alcohol tracker &amp; morning log</small></a></li><li><a href="/lantern/">Lantern<small>A 7-minute daily ritual</small></a></li><li><a href="/stride/">Stride<small>Gentle step tracker</small></a></li><li><a href="/ascension/">Ascension<small>A plan for the frame and the face</small></a></li><li><a href="/evensong/">Evensong<small>Morning &amp; evening devotional</small></a></li><li><a href="/plainly/">Plainly<small>ND dating &amp; friends, said plainly</small></a></li><li><a href="/cutoff/">Cutoff<small>A house stylist that reads your outfit</small></a></li><li><a href="/onsite/">Onsite<small>Interview prep for the AI labs</small></a></li><li><a href="/sesame/">Sesame<small>120 high-protein Asian recipes</small></a></li><li><a href="/kotatsu/">Kotatsu<small>Six friends who kept your seat</small></a></li><li><a href="/undim/">Undim<small>Feel again, on purpose</small></a></li><li><a href="/eastwind/">Eastwind<small>Out of lust, into life</small></a></li><li><a href="/porchcats/">Porch Cats<small>Put out a bowl, see who comes</small></a></li><li><a href="/sizedown/">Size Down<small>Trading journal &amp; eval tracker</small></a></li></ul></li>
+      <li><a href="/apps/" aria-haspopup="true">Apps</a><ul class="fz-dd"><li><a href="/nibble/">Nibble<small>Log meals by photo, voice or barcode</small></a></li><li><a href="/landed/">Landed<small>Keep the weight off after Ozempic</small></a></li><li><a href="/lapis/">Lapis<small>Identify any rock or crystal</small></a></li><li><a href="/wisp/">Wisp<small>Craving SOS &amp; puff tracker</small></a></li><li><a href="/tomorrowyou/">Tomorrow You<small>Alcohol tracker &amp; morning log</small></a></li><li><a href="/lantern/">Lantern<small>A 7-minute daily ritual</small></a></li><li><a href="/stride/">Stride<small>Gentle step tracker</small></a></li><li><a href="/ascension/">Ascension<small>A plan for the frame and the face</small></a></li><li><a href="/evensong/">Evensong<small>Morning &amp; evening devotional</small></a></li><li><a href="/plainly/">Plainly<small>ND dating &amp; friends, said plainly</small></a></li><li><a href="/cutoff/">Cutoff<small>A house stylist that reads your outfit</small></a></li><li><a href="/onsite/">Onsite<small>Interview prep for the AI labs</small></a></li><li><a href="/sesame/">Sesame<small>120 high-protein Asian recipes</small></a></li><li><a href="/kotatsu/">Kotatsu<small>Six friends who kept your seat</small></a></li><li><a href="/undim/">Undim<small>Feel again, on purpose</small></a></li><li><a href="/eastwind/">Eastwind<small>Out of lust, into life</small></a></li><li><a href="/porchcats/">Porch Cats<small>Put out a bowl, see who comes</small></a></li><li><a href="/sizedown/">Size Down<small>Trading journal &amp; eval tracker</small></a></li></ul></li>
       <li><a href="/world/">World</a></li>
+      <li><a href="/log/">Log</a></li>
       <li><a href="/community/">Lounge</a></li>
       <li><a href="/yc/" aria-haspopup="true">Playbooks</a><ul class="fz-dd"><li><a href="/yc/">Get into YC</a></li><li><a href="/medvi-playbook/">The MedVi playbook</a></li><li><a href="/slideshow-play/">The slideshow play</a></li></ul></li>
     </ul>
@@ -49,210 +115,144 @@
 </nav>
 <main>
 
-<section class="hero"><div class="hero-figure" aria-hidden="true"></div><div class="wrap">
-  <span class="eyebrow">Batch 01 &middot; Fall 2026 &middot; shipping weekly</span>
-  <p class="masthead">A small studio in California. Est. 2026.</p>
-  <h1>You were never behind. There was never a line.</h1>
-  <p class="lede">There are more of you than anyone has thought to count: the ones with the group chat from the freshman dorm still open, who can recite everyone else's title and offer year and closing date and would have to check their own, who did every item on the list and arrived to find the list had moved. Nobody built the scoreboard you have been losing on. It assembled itself out of a feed and eight people's best week, and it has never once shown the whole of anybody. It is not a measurement. It is a screenshot.</p>
-  <p class="aim">The world is a great deal larger than the eight people you measure yourself against, and there is a place in it cut to your exact size. God made it before anyone had an opinion, and He is not comparing.</p>
-  <div class="status-row"><a class="btn" href="#apps">Find your app</a><a class="btn ghost" href="/world/">Go somewhere bigger</a></div>
-  <ul class="stats" aria-label="Studio at a glance"><li><b>20</b><span>Apps</span></li><li><b id="days-since">5</b><span>Days since first launch</span></li></ul>
-  <script>(function(){var d=Math.floor((Date.now()-Date.UTC(2026,8,2))/864e5);var e=document.getElementById('days-since');if(e&&d>0)e.textContent=d;})();</script>
+<section class="altar-hero" id="altar"><div class="wrap">
+  <div class="flame" aria-hidden="true">
+    <svg viewBox="0 0 54 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fl" x1="27" y1="6" x2="27" y2="74" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fdf0d0"/><stop offset=".45" stop-color="#e8b66e"/><stop offset="1" stop-color="#c8802f"/>
+        </linearGradient>
+      </defs>
+      <path d="M27 2c1.6 12.4 12.9 17.1 15.9 27.8 3.3 11.8-2.6 24.4-13.2 28.4a17 17 0 0 1-2.7.8 17 17 0 0 1-2.7-.8C13.7 54.2 7.8 41.6 11.1 29.8 14.1 19.1 25.4 14.4 27 2Z" fill="url(#fl)"/>
+      <path d="M27 24c.9 6.8 6.4 9.6 7.6 15.6 1.2 6.3-2.6 12.4-7.6 14-5-1.6-8.8-7.7-7.6-14C20.6 33.6 26.1 30.8 27 24Z" fill="#fff8e8" opacity=".75"/>
+      <ellipse cx="27" cy="69" rx="15" ry="3.4" fill="#000" opacity=".06"/>
+    </svg>
+  </div>
+  <h1>Come, Holy Spirit.</h1>
+  <p class="altar-lede">This page is not selling you anything. It has been set aside.</p>
+  <p class="altar-lede">If you came here looking for the apps, they are still here and they are one tap away. Stay a minute first.</p>
+  <p class="set-aside">An altar &middot; tryforma.app</p>
+  <a class="altar-scroll" href="#who">Who He is <span aria-hidden="true">&darr;</span></a>
 </div></section>
 
-<section class="section" id="apps"><div class="wrap">
-  <h2>Twenty apps</h2>
-  <p class="paths-intro">Each does one thing, keeps your data on your phone, and none of them will ever tell you how you rank. Sort by what this week actually needs.</p>
-  <div class="sorter" role="group" aria-label="Sort the apps">
-    <input class="search" id="app-q" type="search" placeholder="Search the apps" aria-label="Search the apps" autocomplete="off">
-    <div class="chips" id="app-cats" aria-label="By kind"><button class="chip is-on" type="button" data-f="cat" data-v="all">All</button><button class="chip" type="button" data-f="cat" data-v="body">Body</button><button class="chip" type="button" data-f="cat" data-v="mind">Mind</button><button class="chip" type="button" data-f="cat" data-v="people">People</button><button class="chip" type="button" data-f="cat" data-v="faith">Faith</button><button class="chip" type="button" data-f="cat" data-v="money">Money</button><button class="chip" type="button" data-f="cat" data-v="work">Work</button><button class="chip" type="button" data-f="cat" data-v="fun">Fun</button></div>
-    <div class="chips" id="app-status" aria-label="By status"><button class="chip is-on" type="button" data-f="status" data-v="all">Any status</button><button class="chip" type="button" data-f="status" data-v="live">Live now</button><button class="chip" type="button" data-f="status" data-v="review">In review</button><button class="chip" type="button" data-f="status" data-v="soon">Coming</button></div>
-  </div>
-  <div class="grid" id="app-grid"><article class="card" data-cat="body" data-status="live" data-name="nibble calorie tracker food photo voice barcode meals">
-    <div class="meta"><img class="tile" src="/assets/icons/nibble.png" alt="Nibble app icon" width="56" height="56" loading="lazy"><h3><a href="/nibble/" style="text-decoration:none;color:inherit">Nibble</a><small>Log meals by photo, voice or barcode</small></h3></div>
-    <p>AI calorie tracker. Snap a photo, scan a barcode or just say what you ate. No streak to protect.</p>
-    <div class="actions"><span class="pill live">Live<time datetime="2026-09-02">Sep 2</time></span><a class="btn sm" href="https://apps.apple.com/app/id6755325879"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.66c-.02-2.35 1.92-3.48 2.01-3.53-1.1-1.6-2.8-1.82-3.4-1.85-1.45-.15-2.83.85-3.56.85-.74 0-1.87-.83-3.07-.81-1.58.02-3.04.92-3.85 2.33-1.64 2.85-.42 7.07 1.18 9.38.78 1.13 1.71 2.4 2.93 2.35 1.18-.05 1.62-.76 3.05-.76 1.42 0 1.82.76 3.07.74 1.27-.02 2.07-1.15 2.85-2.29.9-1.31 1.27-2.58 1.29-2.65-.03-.01-2.47-.95-2.5-3.76zM14.03 5.75c.65-.79 1.09-1.88.97-2.97-.94.04-2.07.62-2.74 1.41-.6.7-1.13 1.81-.99 2.88 1.05.08 2.11-.53 2.76-1.32z"/></svg>Download on the App Store</a><a class="btn ghost sm" href="/nibble/">Learn more</a></div>
-  </article><article class="card" data-cat="body" data-status="review" data-name="landed glp-1 ozempic weight maintenance regain">
-    <div class="meta"><img class="tile" src="/assets/icons/landed.png" alt="Landed app icon" width="56" height="56" loading="lazy"><h3><a href="/landed/" style="text-decoration:none;color:inherit">Landed</a><small>Keep the weight off after Ozempic</small></h3></div>
-    <p>The maintenance companion for life after GLP-1s. Rebound Radar catches regain drift early.</p>
-    <div class="actions"><span class="pill review">In review<time datetime="2026-09-03">Sep 3</time></span><a class="btn ghost sm" href="/landed/">Learn more</a></div>
-  </article><article class="card" data-cat="fun" data-status="review" data-name="lapis rock crystal identifier stone mineral">
-    <div class="meta"><img class="tile" src="/assets/icons/lapis.png" alt="Lapis app icon" width="56" height="56" loading="lazy"><h3><a href="/lapis/" style="text-decoration:none;color:inherit">Lapis</a><small>Identify any rock or crystal</small></h3></div>
-    <p>Point your camera at a stone and get its name, properties, lore and care in seconds.</p>
-    <div class="actions"><span class="pill review">In review<time datetime="2026-09-03">Sep 3</time></span><a class="btn ghost sm" href="/lapis/">Learn more</a></div>
-  </article><article class="card" data-cat="mind" data-status="review" data-name="wisp quit vaping craving nicotine puff">
-    <div class="meta"><img class="tile" src="/assets/icons/wisp.png" alt="Wisp app icon" width="56" height="56" loading="lazy"><h3><a href="/wisp/" style="text-decoration:none;color:inherit">Wisp</a><small>Craving SOS &amp; puff tracker</small></h3></div>
-    <p>A companion creature that glows brighter every clean hour. Slips dim it, never reset you.</p>
-    <div class="actions"><span class="pill review">In review<time datetime="2026-09-04">Sep 4</time></span><a class="btn ghost sm" href="/wisp/">Learn more</a></div>
-  </article><article class="card" data-cat="mind" data-status="review" data-name="tomorrow you drink less alcohol hangover morning">
-    <div class="meta"><img class="tile" src="/assets/icons/tomorrowyou.png" alt="Tomorrow You app icon" width="56" height="56" loading="lazy"><h3><a href="/tomorrowyou/" style="text-decoration:none;color:inherit">Tomorrow You</a><small>Alcohol tracker &amp; morning log</small></h3></div>
-    <p>Morning check-ins build your personal hangover curve and set tonight’s cap.</p>
-    <div class="actions"><span class="pill review">In review<time datetime="2026-09-04">Sep 4</time></span><a class="btn ghost sm" href="/tomorrowyou/">Learn more</a></div>
-  </article><article class="card" data-cat="mind" data-status="review" data-name="lantern daily ritual seven minutes foggy low stuck">
-    <div class="meta"><div class="tile tile-txt tile-lantern" aria-label="Lantern app icon">L</div><h3><a href="/lantern/" style="text-decoration:none;color:inherit">Lantern</a><small>A 7-minute daily ritual</small></h3></div>
-    <p>Stillness, a story, one small practice and a line to carry, for foggy, low, stuck days.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-05">Sep 5</time></span><a class="btn ghost sm" href="/lantern/">Learn more</a></div>
-  </article><article class="card" data-cat="body" data-status="review" data-name="stride step tracker walking gentle">
-    <div class="meta"><div class="tile tile-txt tile-stride" aria-label="Stride app icon">S</div><h3><a href="/stride/" style="text-decoration:none;color:inherit">Stride</a><small>Gentle step tracker</small></h3></div>
-    <p>Count steps, not calories. No food logging, no streaks, no leaderboard. One number that goes up when you move.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-05">Sep 5</time></span><a class="btn ghost sm" href="/stride/">Learn more</a></div>
-  </article><article class="card" data-cat="body" data-status="soon" data-name="ascension face frame plan squad habits">
-    <div class="meta"><img class="tile" src="/assets/icons/ascension.png" alt="Ascension app icon" width="56" height="56" loading="lazy"><h3><a href="/ascension/" style="text-decoration:none;color:inherit">Ascension</a><small>A plan for the frame and the face, and a few people who notice</small></h3></div>
-    <p>An honest read of what would actually help, a daily plan of low-risk habits, and a small squad that notices when you show up. Measured against last month's you, and nobody else.</p>
-    <div class="actions"><span class="pill building">Building</span><a class="btn ghost sm" href="/ascension/">Learn more</a></div>
-  </article><article class="card" data-cat="faith" data-status="review" data-name="evensong devotional spurgeon morning evening prayer christian">
-    <div class="meta"><div class="tile tile-txt tile-evensong" aria-label="Evensong app icon">E</div><h3><a href="/evensong/" style="text-decoration:none;color:inherit">Evensong</a><small>Morning &amp; evening devotional</small></h3></div>
-    <p>Spurgeon’s Morning and Evening for the whole year, the verse it rests on, a one-line prayer and a short evening examen. Private, on your phone.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-05">Sep 5</time></span><a class="btn ghost sm" href="/evensong/">Learn more</a></div>
-  </article><article class="card" data-cat="people" data-status="soon" data-name="plainly dating friends autistic adhd neurodivergent">
-    <div class="meta"><img class="tile" src="/assets/icons/plainly.png" alt="Plainly app icon" width="56" height="56" loading="lazy"><h3><a href="/plainly/" style="text-decoration:none;color:inherit">Plainly</a><small>ND dating &amp; friends, said plainly</small></h3></div>
-    <p>For autistic, ADHD and AuDHD adults: small hosted tables in quiet places, one-on-one with no swiping, double dates with your safe person. Every plan says how loud it is and how to leave.</p>
-    <div class="actions"><span class="pill soon">Coming soon</span><a class="btn ghost sm" href="/plainly/">Learn more</a></div>
-  </article><article class="card" data-cat="money" data-status="live" data-name="size down trading journal day trader prop firm eval futures">
-    <div class="meta"><img class="tile" src="/assets/icons/sizedown.png" alt="Size Down app icon" width="56" height="56" loading="lazy"><h3><a href="/sizedown/" style="text-decoration:none;color:inherit">Size Down</a><small>Trading journal &amp; eval tracker</small></h3></div>
-    <p>Log a trade in ten seconds, tag how you felt, set your rules once, and see the tilt tax: what you would have made if you had followed them. Prop-firm evals with real drawdown math.</p>
-    <div class="actions"><span class="pill live">On the web</span><a class="btn sm" href="/sizedown/app/">Open the app</a><a class="btn ghost sm" href="/sizedown/">Learn more</a></div>
-  </article><article class="card" data-cat="body" data-status="soon" data-name="cutoff fit check outfit stylist fashion style clothes">
-    <div class="meta"><img class="tile" src="/assets/icons/cutoff.png" alt="Cutoff app icon" width="56" height="56" loading="lazy"><h3><a href="/cutoff/" style="text-decoration:none;color:inherit">Cutoff</a><small>A house stylist that reads your outfit</small></h3></div>
-    <p>Show it one look and it tells you what is working, the one fix, and the three pieces that would finish it. Seven questions at the door and a numbered card, so the house knows whose wardrobe it is reading. Small on purpose.</p>
-    <div class="actions"><span class="pill soon">Coming soon</span><a class="btn ghost sm" href="/cutoff/">Learn more</a></div>
-  </article><article class="card" data-cat="work" data-status="soon" data-name="onsite interview prep ai lab anthropic openai deepmind">
-    <div class="meta"><img class="tile" src="/assets/icons/onsite.png" alt="Onsite app icon" width="56" height="56" loading="lazy"><h3><a href="/onsite/" style="text-decoration:none;color:inherit">Onsite</a><small>Interview prep for the AI labs</small></h3></div>
-    <p>Round-by-round prep for the loops at Anthropic, OpenAI and DeepMind: a plan built backwards from your date, an AI interviewer that asks the follow-ups, and a debrief written the way a real one is. Preparation, not a verdict.</p>
-    <div class="actions"><span class="pill soon">Coming soon</span><a class="btn ghost sm" href="/onsite/">Learn more</a></div>
-  </article><article class="card" data-cat="body" data-status="review" data-name="sesame high protein asian recipes cooking macros korean japanese chinese">
-    <div class="meta"><div class="tile tile-txt tile-sesame" aria-label="Sesame app icon">S</div><h3><a href="/sesame/" style="text-decoration:none;color:inherit">Sesame</a><small>120 high-protein Asian recipes</small></h3></div>
-    <p>120 original high-protein Asian home-cooking recipes with macros per serving, a Today screen that picks three to hit your protein target, and 7-day plans with one grocery list.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-05">Sep 5</time></span><a class="btn ghost sm" href="/sesame/">Learn more</a></div>
-  </article><article class="card" data-cat="people" data-status="review" data-name="kotatsu anime friends companion group chat found family">
-    <div class="meta"><div class="tile tile-txt tile-kotatsu" aria-label="Kotatsu app icon">K</div><h3><a href="/kotatsu/" style="text-decoration:none;color:inherit">Kotatsu</a><small>Six friends who kept your seat</small></h3></div>
-    <p>A group chat with six fictional, anime-style friends around a heated table. They notice when you have been gone and say so lightly: no guilt, no streaks. Found family, not a dating sim.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-06">Sep 6</time></span><a class="btn ghost sm" href="/kotatsu/">Learn more</a></div>
-  </article><article class="card" data-cat="mind" data-status="review" data-name="undim antidepressants therapy phq-9 readiness prescriber">
-    <div class="meta"><div class="tile tile-txt tile-undim" aria-label="Undim app icon">U</div><h3><a href="/undim/" style="text-decoration:none;color:inherit">Undim</a><small>Feel again, on purpose</small></h3></div>
-    <p>For people on antidepressants or in therapy who feel dimmed. One small act a day, five evidence pillars, a weekly PHQ-9, and a 28-day readiness summary to bring to your prescriber. Never a dose.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-07">Sep 7</time></span><a class="btn ghost sm" href="/undim/">Learn more</a></div>
-  </article><article class="card" data-cat="faith" data-status="soon" data-name="eastwind lust porn men recovery">
-    <div class="meta"><div class="tile tile-txt tile-eastwind" aria-label="Eastwind app icon">E</div><h3><a href="/eastwind/" style="text-decoration:none;color:inherit">Eastwind</a><small>Out of lust, into life</small></h3></div>
-    <p>For men done fighting lust. No streaks, no blockers, no guru. One real thing a day, scenes to live before sleep, someone to talk to, permission to go on the date.</p>
-    <div class="actions"><span class="pill soon">In progress</span><a class="btn ghost sm" href="/eastwind/">Learn more</a></div>
-  </article><article class="card" data-cat="people" data-status="soon" data-name="bearing young men ranks marks mentor scouting">
-    <div class="meta"><div class="tile tile-txt tile-bearing" aria-label="Bearing app icon">⚒</div><h3><a href="/bearing/" style="text-decoration:none;color:inherit">Bearing</a><small>Nothing counts until someone signs it</small></h3></div>
-    <p>Seven ranks and thirty-one marks for young men, modelled on the Scouting ladder that is collapsing. A mark only exists once a man who knows you signs it, in person, on your phone. No account, no server, no messaging, on purpose.</p>
-    <div class="actions"><span class="pill soon">In progress</span><a class="btn ghost sm" href="/bearing/">Learn more</a></div>
-  </article><article class="card" data-cat="work" data-status="soon" data-name="trellis high school college plan families uc california">
-    <div class="meta"><div class="tile tile-txt tile-trellis" aria-label="Trellis app icon">🌿</div><h3><a href="/trellis/" style="text-decoration:none;color:inherit">Trellis</a><small>A four-year plan for high school</small></h3></div>
-    <p>What to do each season from ninth grade to the May reply date, and the California calendar that national guides leave out: the UC window, Cal State Apply, COSMOS, AMC, USACO.</p>
-    <div class="actions"><span class="pill soon">In progress</span><a class="btn ghost sm" href="/trellis/">Learn more</a></div>
-  </article><article class="card" data-cat="fun" data-status="review" data-name="porch cats cozy cat collecting game neko">
-    <div class="meta"><div class="tile tile-txt tile-porchcats" aria-label="Porch Cats app icon">🐈</div><h3><a href="/porchcats/" style="text-decoration:none;color:inherit">Porch Cats</a><small>Put out a bowl, see who comes</small></h3></div>
-    <p>A cozy cat-collecting game. Cats drop by while you are away, nap on your stuff, leave fish and a note. Thirty-one cats, no ads, nothing timed to make you pay.</p>
-    <div class="actions"><span class="pill submitted">Submitted<time datetime="2026-09-07">Sep 7</time></span><a class="btn ghost sm" href="/porchcats/">Learn more</a></div>
-  </article></div>
-  <p class="note" id="app-empty" hidden>Nothing in that corner yet. The section below is for exactly that.</p>
+<section class="section" id="who"><div class="wrap narrow">
+  <span class="eyebrow">First, the thing most people have wrong</span>
+  <h2 class="altar-q">He is not an it.</h2>
+  <p>The Holy Spirit is not a force, a mood, a metaphor for your own courage, or the warm feeling at the end of a good song. He is God: the third Person of the Trinity, as fully a Person as the Father and the Son, with a mind, a will, and a voice.</p>
+  <p>You can tell from what Scripture says can be done to Him, because none of it can be done to electricity. He can be grieved. He can be lied to. He can be quenched, which is a word you use about a fire someone has deliberately put out. Those are things you do to a Person who is present in the room.</p>
+  <ul class="names">
+    <li><b>The Comforter</b><span>&ldquo;I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever.&rdquo; <i>John 14:16</i> &mdash; another of the same kind as Jesus, and this one does not leave.</span></li>
+    <li><b>The Spirit of truth</b><span>&ldquo;He will guide you into all truth.&rdquo; <i>John 16:13</i> &mdash; not into cleverness. Into truth, which is a Person too.</span></li>
+    <li><b>The Spirit of adoption</b><span>&ldquo;Ye have received the Spirit of adoption, whereby we cry, Abba, Father.&rdquo; <i>Romans 8:15</i> &mdash; He is the reason you get to use that word at all.</span></li>
+    <li><b>The earnest of the inheritance</b><span>&ldquo;Which is the earnest of our inheritance.&rdquo; <i>Ephesians 1:14</i> &mdash; a deposit, put down in advance, on everything that is coming.</span></li>
+  </ul>
 </div></section>
 
-<section class="section" id="make"><div class="wrap">
-  <span class="eyebrow">Or make your own</span>
-  <h2>The one that is not here yet</h2>
-  <p class="paths-intro">Every app above began as one person's ordinary week. If yours is not on the list, describe it in three lines and hand the prompt to Claude Code. It scaffolds the app, wires the subscriptions, writes the listing, builds it and submits it. You sign in to a few sites first; it does the rest.</p>
-  <div class="make">
-    <form class="make-form" id="make-form" autocomplete="off" onsubmit="return false">
-      <label>Call it<input id="mk-name" type="text" placeholder="Two words, spelled the way they sound" maxlength="40"></label>
-      <label>What it does, for one person on one Tuesday<textarea id="mk-what" rows="3" placeholder="e.g. Reminds me to text one friend a day and remembers who I have not texted in a month."></textarea></label>
-      <label>Who it is for<input id="mk-who" type="text" placeholder="e.g. People who moved cities and lost the group" maxlength="120"></label>
-      <label>The one thing it must never do<input id="mk-never" type="text" value="Compare me to anyone, or keep a streak" maxlength="120"></label>
-    </form>
-    <div class="make-out">
-      <div class="make-out-h"><span class="no">The prompt</span><button class="btn sm" type="button" id="mk-copy">Copy it</button><span class="note" id="mk-note"></span></div>
-      <pre id="mk-prompt" aria-live="polite"></pre>
-    </div>
-  </div>
-  <h3 class="sub-h">Before you hand it over</h3>
+<section class="section" id="does"><div class="wrap narrow">
+  <span class="eyebrow">What He does</span>
+  <h2>Seven things, plainly.</h2>
   <ol class="steps">
-    <li><b>Install Claude Code.</b><span>It runs in the terminal. Open it in an empty folder named after your app.</span></li>
-    <li><b>Turn on Claude in Chrome.</b><span>Install the Chrome extension and sign in. This is how it clicks through the sites for you instead of asking you to.</span></li>
-    <li><b>Sign in to these, in Chrome, before you paste anything.</b><span><a href="https://developer.apple.com/programs/" rel="noopener">Apple Developer Program</a> (the one thing that costs money, $99 a year) &middot; <a href="https://appstoreconnect.apple.com/" rel="noopener">App Store Connect</a> &middot; <a href="https://expo.dev/" rel="noopener">Expo</a> for the builds &middot; <a href="https://www.revenuecat.com/" rel="noopener">RevenueCat</a> for the subscriptions &middot; <a href="https://supabase.com/" rel="noopener">Supabase</a> if anything must sync &middot; <a href="https://github.com/" rel="noopener">GitHub</a> &middot; <a href="https://vercel.com/" rel="noopener">Vercel</a> for the one-page site.</span></li>
-    <li><b>Paste the prompt. Answer its two questions. Go for a walk.</b><span>It will stop for the things only you can do: agreeing to Apple's paid-app agreement and entering banking and tax details. Do those yourself; never hand anyone those.</span></li>
+    <li><b>He tells you the truth about yourself, and you survive it</b><span>He convicts, which feels terrible for about a day and then feels like fresh air. Conviction is not condemnation: one names a specific thing so you can put it down, the other names you and leaves you nowhere to go. &ldquo;There is therefore now no condemnation to them which are in Christ Jesus.&rdquo;</span></li>
+    <li><b>He prays when you have no words left</b><span>&ldquo;We know not what we should pray for as we ought: but the Spirit itself maketh intercession for us with groanings which cannot be uttered.&rdquo; If all you can do tonight is sit on the floor, that counts as prayer, and it is being translated.</span></li>
+    <li><b>He guides, and it is usually quiet</b><span>Not a voice over the loudspeaker. A settled certainty that stays after the feeling goes, and keeps agreeing with Scripture no matter how many times you check it against Scripture.</span></li>
+    <li><b>He grows fruit you did not manufacture</b><span>Love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance. Note that it is fruit, not output. You do not strain for it. You stay attached to the vine and find, months later, that you did not lose your temper in a situation where you always used to.</span></li>
+    <li><b>He hands out gifts, and not to the impressive</b><span>&ldquo;Dividing to every man severally as he will.&rdquo; He gives them as He chooses, to ordinary people, for other people. If you have one, it is not a verdict on your worth; it is a job.</span></li>
+    <li><b>He moves in</b><span>&ldquo;Know ye not that your body is the temple of the Holy Ghost which is in you?&rdquo; Not visits. Dwells. That changes what you do with the body, and it also means you are never alone in a room again.</span></li>
+    <li><b>Where He is, there is room to breathe</b><span>&ldquo;Where the Spirit of the Lord is, there is liberty.&rdquo; If what you are calling the Spirit is making you frightened, superior, or exhausted, it is worth asking what it actually is.</span></li>
   </ol>
-  <p class="honest">Independent studio, not affiliated with Anthropic, Apple, Expo, RevenueCat, Supabase or Vercel. Apple charges for the developer program; everything else starts free.</p>
 </div></section>
 
-<section class="section" id="world"><div class="wrap">
-  <div class="teaser">
-    <div class="globe-wrap mini" data-mini-globe data-lat="37.3688" data-lon="-122.0363" aria-hidden="true"></div>
-    <div>
-      <span class="eyebrow">Somewhere bigger</span>
-      <h2>See how small you are. It is the best news you will get today.</h2>
-      <p class="paths-intro">Eight billion people, and eight of them are in the group chat. A slowly turning globe, a one-pixel you on the peninsula, and four rooms to walk into: someone to adore, a call to make, a company the size of one person, and the cut and the build.</p>
-      <div class="status-row"><a class="btn" href="/world/">For him <span aria-hidden="true">&rarr;</span></a><a class="btn ghost" href="/world/her/">For her <span aria-hidden="true">&rarr;</span></a></div>
-    </div>
+<section class="section" id="ask"><div class="wrap narrow">
+  <span class="eyebrow">How to ask</span>
+  <h2>You ask. That is the whole mechanism.</h2>
+  <p>Jesus made it embarrassingly simple, and then made it an argument from the lesser to the greater: &ldquo;If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?&rdquo; The comparison is to a bad father who still would not hand his kid a stone. You are not negotiating with someone reluctant.</p>
+  <p>There is no formula, no posture, no minimum standard of tidiness you have to reach first. If you are waiting to be less of a mess before you ask, you have the order backwards: He is the one who does the cleaning, and He does it from the inside, and He is patient about it.</p>
+  <div class="prayer">
+    <p>Holy Spirit, I am asking.</p>
+    <p>I have been running this on my own strength and I have got exactly this far.</p>
+    <p>Come into it. All of it, not the tidy part I would show people.</p>
+    <p>Comfort what is grieving in me. Convict what needs convicting, and be gentle with me while You do it.</p>
+    <p>Say the words I do not have when I try to pray.</p>
+    <p>Lead me into the truth, even where the truth is going to cost me something.</p>
+    <p>Grow the things in me that I have never once managed to grow on my own.</p>
+    <p>I am not asking for a feeling. I am asking for You.</p>
+    <p class="amen">In the name of Jesus, who promised You would come. Amen.</p>
   </div>
+  <p class="ancient">If you would rather borrow older words, the Church has been praying this one for something like fifteen hundred years: <q>Come, Holy Spirit, fill the hearts of Thy faithful, and kindle in them the fire of Thy love.</q> Say it out loud. Out loud matters more than you would think, and no, you do not have to feel anything when you finish. Asking is the whole of it. He is not withholding Himself pending your goosebumps.</p>
 </div></section>
 
-<section class="section" id="playbooks"><div class="wrap">
-  <span class="eyebrow">Playbooks</span>
-  <h2>Three plays we studied and wrote down</h2>
-  <p class="paths-intro">One is how to get into a batch. One is how one man turned $20,000 into $401 million in a year, what it cost him, and the six parts of it that transfer cleanly to whatever you are building. The newest is the cheapest: one-shot an app in Claude Code and post slideshows until one lands, with the numbers people are actually reporting.</p>
-  <div class="yc-grid">
-    <a class="card path" href="/slideshow-play/" style="--pc:#b8742a"><span class="n">Playbook 03</span><h3>The slideshow play</h3><p>One-shot an app in Claude Code, post TikTok slideshows two or three a day until one lands. What the bulls and the bears are saying, condensed, the four things that kill it in 2026, and the honest arithmetic of one landed post.</p><span class="more">Read the playbook <i aria-hidden="true">&rarr;</i></span></a>
-    <a class="card path" href="/medvi-playbook/" style="--pc:var(--accent)"><span class="n">Playbook 02</span><h3>The MedVi playbook</h3><p>Dispatch, Sep 11: his own ad spend has moved to QUAD, the ED product, and GLP-1 is background noise. Plus the three pages: what he did, what you would do now, and the Facebook machine, with a verse at the foot of each.</p><span class="more">Read the playbook <i aria-hidden="true">&rarr;</i></span></a>
-    <a class="card path" href="/yc/" style="--pc:#2f7d63"><span class="n">Playbook 01</span><h3>Get into YC</h3><p>Ship weekly, show the log, answer like a founder. The eight questions, the weekly cadence, and a wall where we mark up your draft.</p><span class="more">Read the playbook <i aria-hidden="true">&rarr;</i></span></a>
-  </div>
+<section class="section" id="grieve"><div class="wrap narrow">
+  <span class="eyebrow">And then, honestly</span>
+  <h2>He can be grieved, and He will not shout over you.</h2>
+  <p>&ldquo;Grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption.&rdquo; Grief is what a Person feels when someone they love chooses something that will hurt them. That is the word Paul reached for. Not anger. Grief.</p>
+  <p>&ldquo;Quench not the Spirit.&rdquo; A fire goes out two ways: you pour something on it, or you stop feeding it. Most of us manage it the second way, over months, without ever deciding to. He does not compete for airtime with everything you have on. He waits. The waiting is mercy, not absence, and He is still there when the noise finally stops.</p>
+  <p class="callout">If you have gone quiet on Him for a year, the way back is one sentence long and you already know what it is.</p>
 </div></section>
 
-
-<section class="section" id="told"><div class="wrap narrow">
-  <span class="eyebrow">What we are against</span>
-  <h2>We are told a lot of things</h2>
-  <ul class="told">
-    <li>That you are behind, on a timeline nobody ever wrote down and which is somehow still binding.</li>
-    <li>That the eight people in the group chat are the sample, and that the sample is the world.</li>
-    <li>That the title is the man, and that the man can be read off a profile in under a second.</li>
-    <li>That wanting a quieter, smaller life is settling, and that settling is a failure rather than a decision.</li>
-    <li>That you should be realistic, a word which in practice has only ever meant smaller.</li>
-  </ul>
-  <p class="told-turn">None of it is true. Not one line of it. And most of the people who seem to be winning by it are checking the same tab you are.</p>
-  <h2 style="margin-top:44px">What we believe</h2>
-  <ul class="beliefs"><li>We believe you were made on purpose, before anyone had an opinion.</li><li>We believe there is no leaderboard, and that the feeling of one is the most expensive thing you own.</li><li>We believe the world is enormous, and that this is a relief.</li><li>We believe enough is a number, and that you have probably already passed it.</li><li>We believe a life the size of one person is a whole life, and not a consolation prize.</li><li>We believe being known beats being looked at, every time.</li><li>We believe your data belongs on your phone, and that every support email should be read and answered by a person. Ours are.</li></ul>
-</div></section>
-
-<section class="section" id="log"><div class="wrap narrow">
-  <span class="eyebrow">Ship log</span>
-  <h2>What went out this week</h2>
-  <div class="ledger-head" aria-hidden="true"><span>Date</span><span>Item</span><span>Status</span></div>
-  <ul class="log ledger">
-    <li><time datetime="2026-09-16">Sep 16</time><b><a href="/slideshow-play/">Playbook 03: the slideshow play. Claude Code apps, TikTok slideshows, the real numbers</a></b><span class="pill shipped">Shipped</span></li>
-    <li><time datetime="2026-09-15">Sep 15</time><b><a href="/the-fast/">A note: hungry, and not turning back. And how to break a dry spell</a></b><span class="pill shipped">Shipped</span></li>
-    <li><time datetime="2026-09-07">Sep 7</time><b>The World, for him and for her: a globe and four rooms</b><span class="pill shipped">Shipped</span></li>
-    <li><time datetime="2026-09-07">Sep 7</time><b>Undim and Porch Cats submitted</b><span class="pill submitted">Submitted</span></li>
-    <li><time datetime="2026-09-07">Sep 7</time><b>Bearing and Trellis pages up</b><span class="pill shipped">Shipped</span></li>
-    <li><time datetime="2026-09-06">Sep 6</time><b>Kotatsu submitted to App Review</b><span class="pill submitted">Submitted</span></li>
-    <li><time datetime="2026-09-05">Sep 5</time><b>Sesame, Evensong, Stride and Lantern submitted</b><span class="pill submitted">Submitted</span></li>
-    <li><time datetime="2026-09-02">Sep 2</time><b>Nibble (formerly Macra) 1.4 live</b><span class="pill live">Live</span></li>
-  </ul>
-  <p class="log-follow"><a href="/community/">Follow along in the Lounge <span aria-hidden="true">&rarr;</span></a> &middot; <a href="/yc/">The playbook, if you are aiming at a batch</a></p>
+<section class="section" id="why"><div class="wrap narrow">
+  <span class="eyebrow">Why He was sent at all</span>
+  <h2>&ldquo;It is expedient for you that I go away.&rdquo;</h2>
+  <p>This is one of the strangest things Jesus ever said to people who loved Him: it is better for you that I leave. &ldquo;For if I go not away, the Comforter will not come unto you; but if I depart, I will send him unto you.&rdquo; Better, because a Christ standing beside you can only be in one place, and a Spirit inside you is with all of His people in all of the places at once, including the room you are in now.</p>
+  <p>But He could only be sent because something had been finished first. Pentecost comes after the cross, not instead of it. Which brings this page to the only part of it that is not about you at all.</p>
 </div></section>
 
 <section class="section" id="way-back"><div class="plate-door" aria-hidden="true"></div><div class="wrap">
   <p style="font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:0 0 18px;max-width:26ch">It was never yours to settle. Someone who could afford it settled it anyway, in full.</p>
   <p class="ask">Which leaves the one question still worth asking. What will you do with a life that has already been paid for?</p>
-  <p class="cadence">New things go out most weeks.</p>
-  <div class="status-row"><a class="btn" href="#apps">Find your app</a><a class="btn ghost" href="/lantern/">Start with Day 1, free</a></div>
+  <p class="cadence">The Spirit is the seal on that receipt. He was given as the proof it was paid.</p>
+  <div class="status-row"><a class="btn" href="#ask">Ask Him</a><a class="btn ghost" href="/lantern/">Seven minutes tomorrow morning</a></div>
 </div></section>
 
-<section class="section"><div class="wrap">
-  <div class="banner">
-    <div><h3 style="margin:0 0 4px">The Forma Lounge</h3><p>Weekly notes from the studio, a place to request an app, and the makers hanging out with the people who use the apps.</p></div>
-    <a class="btn" href="/community/">Come say hi</a>
-  </div>
-  <p class="note" style="margin-top:18px">If you are in immediate danger or thinking about ending your life, please contact your local emergency number or a crisis line right now. This site is encouragement, not care.</p>
+<section class="section" id="stones"><div class="wrap">
+  <span class="eyebrow">Deuteronomy 27</span>
+  <h2>Twelve great stones, plaistered, written on very plainly.</h2>
+  <p class="stones-intro">When Israel came over Jordan they were told to do a strange, physical thing before anything else: <em>&ldquo;Thou shalt set thee up great stones, and plaister them with plaister: And thou shalt write upon them all the words of this law very plainly.&rdquo;</em> Not a scroll, not a sermon. Stones, whitewashed, standing in the open where everybody walking past has to read them. Joshua did it again at Ebal, and twelve more were carried up out of the riverbed at Gilgal so that when a child asked what they meant, there was something to point at.</p>
+  <p class="stones-intro">So here are ours. Coated white, set upright, written plainly, meant to be read on the way past rather than studied.</p>
+  <ol class="stones">
+    <li class="stone"><span class="n">Stone 1</span><p class="word">Do not look to the past.</p><cite>Isaiah 43:18 &middot; Philippians 3:13</cite></li>
+    <li class="stone"><span class="n">Stone 2</span><p class="word">Do not be given to gluttony.</p><cite>Proverbs 23:2 &middot; Philippians 3:19</cite></li>
+    <li class="stone"><span class="n">Stone 3</span><p class="word">Do not measure yourself against eight people.</p><cite>2 Corinthians 10:12</cite></li>
+    <li class="stone"><span class="n">Stone 4</span><p class="word">Do not despise the small day.</p><cite>Zechariah 4:10</cite></li>
+    <li class="stone"><span class="n">Stone 5</span><p class="word">Ask, and go on asking.</p><cite>Luke 11:9</cite></li>
+    <li class="stone"><span class="n">Stone 6</span><p class="word">Do the thing in front of you, with your might.</p><cite>Ecclesiastes 9:10</cite></li>
+    <li class="stone"><span class="n">Stone 7</span><p class="word">Tell the truth, starting with the truth about yourself.</p><cite>Ephesians 4:25</cite></li>
+    <li class="stone"><span class="n">Stone 8</span><p class="word">Guard what you look at.</p><cite>Job 31:1 &middot; Matthew 6:22</cite></li>
+    <li class="stone"><span class="n">Stone 9</span><p class="word">Give the first of it away, not the last.</p><cite>Proverbs 3:9</cite></li>
+    <li class="stone"><span class="n">Stone 10</span><p class="word">Forgive quickly. Carry nothing overnight.</p><cite>Ephesians 4:26 &middot; Colossians 3:13</cite></li>
+    <li class="stone"><span class="n">Stone 11</span><p class="word">Be not afraid. He has not left.</p><cite>Isaiah 41:10 &middot; Hebrews 13:5</cite></li>
+    <li class="stone"><span class="n">Stone 12</span><p class="word">Remember who paid, and live like it.</p><cite>1 Corinthians 6:20</cite></li>
+  </ol>
+  <p class="note" style="margin-top:26px;max-width:66ch">More stones as they are given. If one of these is the one you needed today, it is yours; take it off the wall and carry it out.</p>
 </div></section>
 
 <section class="section" id="wall"><div class="wrap">
-  <div data-comments="Say something to the next person"></div>
+  <h2>The altar</h2>
+  <p class="note" style="max-width:66ch">Leave what you are carrying. A name, a word, a thing you cannot say anywhere else, a request with no explanation attached. Other people read this wall, and some of them will pray over what you put here. You do not have to sign it.</p>
+  <div data-comments="Leave it here. A name, a word, a thing you cannot carry."></div>
 </div></section>
 <script src="/assets/comments.js" defer></script>
+
+<section class="section" id="scripture"><div class="wrap narrow">
+<div class="scripture-foot">
+  <span class="eyebrow">At the foot, in tribute</span>
+  <p class="scripture"><b>John 14:16&ndash;17</b> &mdash; &ldquo;And I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever; Even the Spirit of truth; whom the world cannot receive, because it seeth him not, neither knoweth him: but ye know him; for he dwelleth with you, and shall be in you.&rdquo;</p>
+  <p class="scripture"><b>Luke 11:13</b> &mdash; &ldquo;If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?&rdquo;</p>
+  <p class="scripture"><b>Romans 8:26</b> &mdash; &ldquo;Likewise the Spirit also helpeth our infirmities: for we know not what we should pray for as we ought: but the Spirit itself maketh intercession for us with groanings which cannot be uttered.&rdquo;</p>
+  <p class="scripture"><b>Galatians 5:22&ndash;23</b> &mdash; &ldquo;But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance: against such there is no law.&rdquo;</p>
+  <p class="scripture"><b>2 Corinthians 3:17</b> &mdash; &ldquo;Now the Lord is that Spirit: and where the Spirit of the Lord is, there is liberty.&rdquo;</p>
+  <p class="scripture"><b>Acts 2:2&ndash;4</b> &mdash; &ldquo;And suddenly there came a sound from heaven as of a rushing mighty wind, and it filled all the house where they were sitting. And there appeared unto them cloven tongues like as of fire, and it sat upon each of them. And they were all filled with the Holy Ghost.&rdquo;</p>
+  <p class="altar-foot-note" style="margin-top:18px">All quotations are from the King James Version. This page is one person&rsquo;s belief, written plainly and offered, not a church, not counselling, and not a substitute for either. If you want to talk to somebody about any of it, the Lounge is open and the email below is read by a person.</p>
+</div>
+</div></section>
+
+<section class="section" id="still"><div class="wrap">
+  <div class="banner">
+    <div><h3 style="margin:0 0 4px">The studio is still here</h3><p>Twenty small apps, a ship log, three playbooks and a globe. All of it one tap away, none of it on this page on purpose.</p></div>
+    <a class="btn" href="/apps/">The apps</a>
+  </div>
+  <p class="still-here" style="margin-top:18px"><a href="/apps/">The apps</a> &middot; <a href="/log/">The ship log</a> &middot; <a href="/world/">The World</a> &middot; <a href="/community/">The Lounge</a> &middot; <a href="/slideshow-play/">The playbooks</a></p>
+  <p class="note" style="margin-top:14px">If you are in immediate danger or thinking about ending your life, please contact your local emergency number or a crisis line right now. Sit with someone tonight. This page is encouragement, not care, and there is no shame at all in needing the other kind.</p>
+</div></section>
 
 </main>
 <footer class="fz-footer">
@@ -260,73 +260,12 @@
     <div>
       <p class="fz-tag">Forma</p>
       <p>Small, honest tools for the long game. Made by a tiny studio.</p>
-      <p><a href="/world/">The World</a> &middot; <a href="/community/">The Forma Lounge</a> &middot; <a href="mailto:tryformaapp@gmail.com">tryformaapp@gmail.com</a></p>
+      <p><a href="/apps/">The apps</a> &middot; <a href="/log/">The log</a> &middot; <a href="/world/">The World</a> &middot; <a href="/community/">The Forma Lounge</a> &middot; <a href="mailto:tryformaapp@gmail.com">tryformaapp@gmail.com</a></p>
     </div>
     <div><h4>Apps</h4><ul><li><a href="/nibble/">Nibble</a></li><li><a href="/landed/">Landed</a></li><li><a href="/lapis/">Lapis</a></li><li><a href="/wisp/">Wisp</a></li><li><a href="/tomorrowyou/">Tomorrow You</a></li><li><a href="/lantern/">Lantern</a></li><li><a href="/stride/">Stride</a></li><li><a href="/ascension/">Ascension</a></li><li><a href="/evensong/">Evensong</a></li><li><a href="/plainly/">Plainly</a></li><li><a href="/cutoff/">Cutoff</a></li><li><a href="/onsite/">Onsite</a></li><li><a href="/sesame/">Sesame</a></li><li><a href="/kotatsu/">Kotatsu</a></li><li><a href="/undim/">Undim</a></li><li><a href="/eastwind/">Eastwind</a></li><li><a href="/porchcats/">Porch Cats</a></li><li><a href="/bearing/">Bearing</a></li><li><a href="/trellis/">Trellis</a></li><li><a href="/sizedown/">Size Down</a></li><li><a href="/yc/">Get into YC</a></li><li><a href="/medvi-playbook/">The MedVi playbook</a></li></ul></div>
     <div><h4>Legal</h4><ul><li>Nibble: <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></li><li>Landed: <a href="/landed/privacy.html">Privacy</a> &middot; <a href="/landed/terms.html">Terms</a></li><li>Lapis: <a href="/lapis/privacy.html">Privacy</a> &middot; <a href="/lapis/terms.html">Terms</a></li><li>Wisp: <a href="/wisp/privacy.html">Privacy</a> &middot; <a href="/wisp/terms.html">Terms</a></li><li>Tomorrow You: <a href="/tomorrowyou/privacy.html">Privacy</a> &middot; <a href="/tomorrowyou/terms.html">Terms</a></li><li>Lantern: <a href="/lantern/privacy.html">Privacy</a> &middot; <a href="/lantern/terms.html">Terms</a></li><li>Stride: <a href="/stride/privacy.html">Privacy</a> &middot; <a href="/stride/terms.html">Terms</a></li><li>Ascension: <a href="/ascension/privacy.html">Privacy</a> &middot; <a href="/ascension/terms.html">Terms</a></li><li>Evensong: <a href="/evensong/privacy.html">Privacy</a> &middot; <a href="/evensong/terms.html">Terms</a></li><li>Plainly: <a href="/plainly/privacy.html">Privacy</a> &middot; <a href="/plainly/terms.html">Terms</a></li><li>Cutoff: <a href="/cutoff/privacy.html">Privacy</a> &middot; <a href="/cutoff/terms.html">Terms</a></li><li>Onsite: <a href="/onsite/privacy.html">Privacy</a> &middot; <a href="/onsite/terms.html">Terms</a></li><li>Sesame: <a href="/sesame/privacy.html">Privacy</a> &middot; <a href="/sesame/terms.html">Terms</a></li><li>Kotatsu: <a href="/kotatsu/privacy.html">Privacy</a> &middot; <a href="/kotatsu/terms.html">Terms</a></li><li>Undim: <a href="/undim/privacy.html">Privacy</a> &middot; <a href="/undim/terms.html">Terms</a></li><li>Eastwind: <a href="/eastwind/privacy.html">Privacy</a> &middot; <a href="/eastwind/terms.html">Terms</a></li><li>Porch Cats: <a href="/porchcats/privacy.html">Privacy</a> &middot; <a href="/porchcats/terms.html">Terms</a></li><li>Bearing: <a href="/bearing/privacy.html">Privacy</a> &middot; <a href="/bearing/terms.html">Terms</a></li><li>Trellis: <a href="/trellis/privacy.html">Privacy</a> &middot; <a href="/trellis/terms.html">Terms</a></li><li>Size Down: <a href="/sizedown/privacy.html">Privacy</a> &middot; <a href="/sizedown/terms.html">Terms</a></li></ul></div>
     <div class="fz-legal">&copy; 2026 Forma &middot; <span class="est">Est. 2026</span> &middot; All rights reserved.</div>
   </div>
 </footer>
-
-<script>
-(function(){
-  'use strict';
-  /* ---- apps: sort by kind, status, and a search box. Pure client-side. ---- */
-  var grid=document.getElementById('app-grid'), q=document.getElementById('app-q'), empty=document.getElementById('app-empty');
-  if(grid){
-    var cards=[].slice.call(grid.querySelectorAll('.card')), f={cat:'all',status:'all',q:''};
-    function apply(){
-      var n=0;
-      cards.forEach(function(c){
-        var ok=(f.cat==='all'||c.dataset.cat===f.cat)&&(f.status==='all'||c.dataset.status===f.status)&&(!f.q||(c.dataset.name+' '+c.textContent).toLowerCase().indexOf(f.q)>-1);
-        c.hidden=!ok; if(ok)n++;
-      });
-      empty.hidden=n>0;
-    }
-    document.querySelectorAll('.sorter [data-f]').forEach(function(b){
-      b.addEventListener('click',function(){
-        var k=b.getAttribute('data-f'); f[k]=b.getAttribute('data-v');
-        b.parentNode.querySelectorAll('[data-f]').forEach(function(x){x.classList.toggle('is-on',x===b)});
-        apply();
-      });
-    });
-    q.addEventListener('input',function(){f.q=q.value.trim().toLowerCase();apply()});
-  }
-  /* ---- make your own: assemble a prompt for Claude Code as they type ---- */
-  var out=document.getElementById('mk-prompt');
-  if(out){
-    var g=function(id){return document.getElementById(id).value.trim()};
-    function build(){
-      var name=g('mk-name')||'[name]', what=g('mk-what')||'[what it does, for one person on one Tuesday]', who=g('mk-who')||'[who it is for]', never=g('mk-never')||'compare me to anyone, or keep a streak';
-      out.textContent=
-'Build me an iPhone app called '+name+'.\n\n'+
-'What it does: '+what+'\n'+
-'Who it is for: '+who+'\n'+
-'The one thing it must never do: '+never+'.\n\n'+
-'Stack: Expo (React Native) with TypeScript. RevenueCat for a monthly and an annual subscription with a 7-day trial. Supabase only for data that genuinely must sync; everything else stays on the device. EAS Build for iOS. Submit through App Store Connect.\n\n'+
-'Rules: one thing, done well. No account unless the feature is impossible without one. No streaks, no leaderboards, no rankings, no comparison of any kind. Plain, warm copy; no exclamation marks. Dark mode. Accessibility labels on every control. Keep the App Store description honest and include a Terms of Use (EULA) link and a privacy policy link in it.\n\n'+
-'Do this end to end and do not stop to ask permission for routine steps: scaffold the project; build the screens; wire RevenueCat and the paywall; write the App Store listing (name, subtitle, description, keywords, category, age rating and the privacy questionnaire answers); generate the icon and six screenshots; create the app record and the subscriptions in App Store Connect, including the subscription group version; run an EAS production build; submit it for review; deploy a one-page site on Vercel with the privacy policy and terms.\n\n'+
-'You have Claude in Chrome. I am already signed in to Apple Developer, App Store Connect, Expo, RevenueCat, Supabase, GitHub and Vercel. Use those sessions; never ask me for a password and never enter payment or banking details, stop and tell me when one of those is needed.\n\n'+
-'When you are done, give me: the TestFlight link, the App Store Connect URL, the Vercel URL, and a short list of anything that still needs my finger.';
-    }
-    ['mk-name','mk-what','mk-who','mk-never'].forEach(function(id){document.getElementById(id).addEventListener('input',build)});
-    build();
-    document.getElementById('mk-copy').addEventListener('click',function(){
-      var n=document.getElementById('mk-note');
-      if(navigator.clipboard){navigator.clipboard.writeText(out.textContent).then(function(){n.textContent='Copied. Paste it into Claude Code.'},function(){n.textContent='Select it and copy by hand.'})}else{n.textContent='Select it and copy by hand.'}
-    });
-  }
-  /* ---- the mini globe loads d3 only when the teaser comes near ---- */
-  var host=document.querySelector('[data-mini-globe]');
-  if(host&&'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      if(!es.some(function(e){return e.isIntersecting}))return; io.disconnect();
-      var s=['https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js','https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js','/assets/world.js'];
-      (function load(i){ if(i>=s.length)return; var el=document.createElement('script'); el.src=s[i]; el.onload=function(){load(i+1)}; document.body.appendChild(el); })(0);
-    },{rootMargin:'400px 0px'});
-    io.observe(host);
-  }
-})();
-</script>
 </body>
 </html>
