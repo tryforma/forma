@@ -37,12 +37,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/lapis/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/wisp/</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -62,12 +56,6 @@
   </url>
   <url>
     <loc>https://tryforma.app/stride/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/ascension/</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -175,18 +163,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/ascension/privacy.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/ascension/terms.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/evensong/privacy.html</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
@@ -195,39 +171,6 @@
   <url>
     <loc>https://tryforma.app/evensong/terms.html</loc>
     <lastmod>2026-09-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/plainly/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/plainly/privacy.html</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/plainly/terms.html</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/cutoff/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/cutoff/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/cutoff/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -292,21 +235,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/onsite/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/onsite/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/onsite/terms.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/undim/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -343,41 +271,6 @@
     <priority>0.3</priority>
   </url>
 
-  <url>
-    <loc>https://tryforma.app/eastwind/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/eastwind/privacy.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/eastwind/terms.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url><loc>https://tryforma.app/trellis/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://tryforma.app/trellis/privacy.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://tryforma.app/trellis/terms.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/uc-application-deadline-guide/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/what-is-a-spike-college-admissions/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/bay-area-summer-programs-deadlines/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/four-year-high-school-plan/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/early-decision-vs-early-action/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/how-many-ap-classes/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/college-list-reach-target-likely/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/national-merit-psat-california/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/talking-to-your-teenager-about-college/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/trellis/guides/what-college-costs-bay-area/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tryforma.app/bearing/</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://tryforma.app/bearing/privacy.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://tryforma.app/bearing/terms.html</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url>
     <loc>https://tryforma.app/world/</loc>
     <lastmod>2026-09-07</lastmod>

@@ -34,6 +34,86 @@
             "source": "/paths/(.*)",
             "destination": "/",
             "permanent": true
+        },
+        {
+            "source": "/ascension",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/ascension/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/plainly",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/plainly/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/cutoff",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/cutoff/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/onsite",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/onsite/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/eastwind",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/eastwind/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/bearing",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/bearing/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/trellis",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/trellis/(.*)",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/lapis",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/lapis/",
+            "destination": "/apps/",
+            "permanent": true
         }
     ]
 }
