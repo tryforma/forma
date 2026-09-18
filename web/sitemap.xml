@@ -37,36 +37,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/wisp/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/tomorrowyou/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/lantern/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/stride/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/evensong/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/yc/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -175,12 +145,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/sesame/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/sesame/privacy.html</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
@@ -193,12 +157,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/kotatsu/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/kotatsu/privacy.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
@@ -209,12 +167,6 @@
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/sizedown/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tryforma.app/sizedown/app/</loc>
@@ -235,12 +187,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tryforma.app/undim/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://tryforma.app/undim/privacy.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
@@ -251,12 +197,6 @@
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://tryforma.app/porchcats/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tryforma.app/porchcats/privacy.html</loc>

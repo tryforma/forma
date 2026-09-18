@@ -114,6 +114,106 @@
             "source": "/lapis/",
             "destination": "/apps/",
             "permanent": true
+        },
+        {
+            "source": "/sesame",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/sesame/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/stride",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/stride/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/wisp",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/wisp/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/tomorrowyou",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/tomorrowyou/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/undim",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/undim/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/lantern",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/lantern/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/evensong",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/evensong/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/kotatsu",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/kotatsu/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/porchcats",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/porchcats/",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/sizedown",
+            "destination": "/apps/",
+            "permanent": true
+        },
+        {
+            "source": "/sizedown/",
+            "destination": "/apps/",
+            "permanent": true
         }
     ]
 }
