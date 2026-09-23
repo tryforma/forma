@@ -43,3 +43,10 @@ restaurant, menu, printable, chart, pdf, calculator only
 - All three ad groups Running, Search Match OFF, iPhone only, new users, age 18–65+, default product page:
   AI photo intent (15 exact kws @ $2.00) · macro / protein (10 @ $1.50) · competitor overflow (6 @ $1.50). 18 campaign negatives.
 - Pre-existing "Macra - US - Search - Exact" campaign in the same account stays PAUSED.
+## Result (checked Sep 23 2026, day 7 of 8)
+- **Zero delivery for the entire run:** $0.00 spend, 0 impressions, 0 taps, 0 installs across all 3 ad groups and all 31 keywords (Last 30 days). The credit is effectively unspent.
+- Everything inside the campaign checks out: campaign "Running (ends in 1 day)", all ad groups Running, every keyword Running, the Default Ad "Active", Search Match off as intended, Nibble 1.7 live on the US storefront (12+, Health & Fitness), no delivery warning in Recommendations or Notifications (the 225 notifications are all keyword suggestions).
+- So the block is at the account level, which the automation is not allowed to open: most likely the $100 promo credit was never redeemed / no payment method on file, or the advertiser account is still pending verification. Ray checks Account Settings → Payment/Billing himself.
+- Daily pass could not run Sep 17–22 (Apple Ads session expired; sign-in is Ray's). It would not have mattered — nothing served.
+- Next: once billing/verification is fixed, push the end date out (or duplicate the campaign) — the keyword build is sound and does not need redoing.
+
