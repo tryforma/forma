@@ -67,4 +67,25 @@ Changes made Sep 23 (all reversible, daily budget still $10):
 
 This is also the decisive test. If Search Match at $3.00 still returns 0 impressions after 24–48 h, the cause is
 app/account eligibility, not bidding, and it becomes a question for Apple Ads support rather than a settings fix.
+## Sep 24 2026 — every in-console lever is now exhausted
+Checked ~18 h after the Sep 23 changes: **still $0.00 / 0 impressions** on all three ad groups, with
+Search Match confirmed ON and the $3.00 default bid live on "Exact - AI photo intent".
+
+Also verified today (so these can be ruled out for good):
+- Each of the three ad groups has a **Default Ad, status Active** (creative source = default product page).
+  A missing ad was the last plausible in-campaign defect; it is not the problem.
+- Campaign Running to Oct 15, all ad groups Running, all 31 keywords Running.
+
+Final optimisation applied Sep 24: ad group "Exact - AI photo intent" audience switched from
+**Choose Specific Audiences → Reach All Eligible Users**. The narrowing filters (iPhone only, new users,
+age 18–65+) were stacking multiplicatively on a campaign that had never served; an age range in particular
+excludes every user Apple cannot age-verify. Ad groups 2 and 3 keep the narrow targeting as controls.
+
+Current state of ad group 1: Search Match ON, default Max CPT $3.00, Reach All Eligible Users, keyword-level
+bids still $2.00 (they override the default for those exact terms; the $3.00 applies to Search Match traffic).
+
+**If this still shows 0 impressions by Sep 25–26, stop tuning.** Nothing inside the console is left to change.
+The remaining explanations are app/account ad eligibility, and the next step is Apple Ads support via
+Contact Us in the console, quoting campaign 2144691217 and "zero impressions since Sep 16 with Search Match on
+and a $3.00 bid".
 
