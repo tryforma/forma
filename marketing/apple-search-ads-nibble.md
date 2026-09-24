@@ -49,4 +49,22 @@ restaurant, menu, printable, chart, pdf, calculator only
 - So the block is at the account level, which the automation is not allowed to open: most likely the $100 promo credit was never redeemed / no payment method on file, or the advertiser account is still pending verification. Ray checks Account Settings → Payment/Billing himself.
 - Daily pass could not run Sep 17–22 (Apple Ads session expired; sign-in is Ray's). It would not have mattered — nothing served.
 - Next: once billing/verification is fixed, push the end date out (or duplicate the campaign) — the keyword build is sound and does not need redoing.
+## Correction + relaunch (Sep 23 2026)
+The "account-level billing block" theory from earlier today was **wrong**. Verified in Account Settings:
+- Business Details complete and error-free: RZ International LLC, Tax ID on file, 1322 Miette Way, Sunnyvale CA 94087, US.
+- Billing → Payment Card: card ••••6458 on file, billing address set, promo credit entry dated September 2, 2026.
+- No warning or hold anywhere in the console.
+
+So the account can pay. The remaining explanation for 0 impressions is that the ads never won (or never entered)
+an auction: exact-match only, Search Match off, and $1.50–$2.00 bids in a category where calorie-tracker CPTs
+run $3–5. Most keywords also showed 1-of-5 popularity.
+
+Changes made Sep 23 (all reversible, daily budget still $10):
+- Campaign end date Sep 24 → **Oct 15 2026** (22 days left) so the run isn't dead before it can be tested.
+- Ad group "Exact - AI photo intent": default Max CPT Bid $2.00 → **$3.00** (the plan's own cap) and
+  **Search Match ON**. Ad groups 2 and 3 left exact-only at $1.50 as the control.
+- Everything else unchanged: iPhone only, new users, 18–65+, US, Search Results, 18 campaign negatives.
+
+This is also the decisive test. If Search Match at $3.00 still returns 0 impressions after 24–48 h, the cause is
+app/account eligibility, not bidding, and it becomes a question for Apple Ads support rather than a settings fix.
 
