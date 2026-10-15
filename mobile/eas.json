@@ -21,6 +21,18 @@
         "EXPO_PUBLIC_REVENUECAT_IOS_KEY": "appl_MCMsHWCvHakToGcBJnHKoipuVEU",
         "EXPO_PUBLIC_REVENUECAT_ANDROID_KEY": "goog_vlVHjatHPbHOVkUZsAgwyGLjzdg"
       }
+    },
+    "e2e": {
+      "distribution": "internal",
+      "ios": {
+        "simulator": true,
+        "buildConfiguration": "Release"
+      },
+      "env": {
+        "EXPO_PUBLIC_REVENUECAT_IOS_KEY": "appl_MCMsHWCvHakToGcBJnHKoipuVEU",
+        "EXPO_PUBLIC_REVENUECAT_ANDROID_KEY": "goog_vlVHjatHPbHOVkUZsAgwyGLjzdg",
+        "EXPO_PUBLIC_E2E": "1"
+      }
     }
   },
   "submit": {

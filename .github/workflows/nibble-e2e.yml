@@ -1,0 +1,128 @@
+# End-to-end tests for Nibble on an iOS simulator with Maestro.
+# Builds a simulator .app with the `e2e` EAS profile (EXPO_PUBLIC_E2E=1 adds a test-only
+# "unlock premium" link on the paywall), then runs every flow in mobile/.maestro and
+# uploads screenshots, videos and a JUnit report.
+# Pass app_run_id to reuse the .app from an earlier run and skip the ~30 min build.
+name: Nibble E2E (Maestro)
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_run_id:
+        description: Run id whose nibble-sim-app artifact to reuse (blank = build a fresh one)
+        required: false
+        default: ''
+      flows:
+        description: Flow path under mobile/.maestro to run (blank = all)
+        required: false
+        default: ''
+
+concurrency:
+  group: nibble-e2e
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: ${{ inputs.app_run_id == '' }}
+    runs-on: macos-26
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: mobile
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - run: npm ci
+      - run: npm install -g eas-cli
+      - name: Build simulator app
+        run: |
+          eas build --platform ios --profile e2e --local --non-interactive \
+            --output "$GITHUB_WORKSPACE/nibble-sim.tar.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nibble-sim-app
+          path: nibble-sim.tar.gz
+          retention-days: 14
+          if-no-files-found: error
+
+  test:
+    needs: build
+    if: ${{ always() && (needs.build.result == 'success' || needs.build.result == 'skipped') }}
+    runs-on: macos-26
+    timeout-minutes: 75
+    env:
+      MAESTRO_CLI_NO_ANALYTICS: '1'
+      MAESTRO_DRIVER_STARTUP_TIMEOUT: '180000'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download app (this run)
+        if: ${{ inputs.app_run_id == '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: nibble-sim-app
+      - name: Download app (earlier run)
+        if: ${{ inputs.app_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: nibble-sim-app
+          run-id: ${{ inputs.app_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Unpack app
+        run: |
+          mkdir app && tar -xzf nibble-sim.tar.gz -C app
+          APP=$(find app -maxdepth 3 -name '*.app' -type d | head -1)
+          echo "APP=$APP" >> "$GITHUB_ENV"
+          /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' "$APP/Info.plist"
+
+      - name: Boot simulator
+        run: |
+          xcrun simctl list runtimes
+          DEVICE=$(xcrun simctl list devices available -j | python3 -c '
+          import json,sys
+          d=json.load(sys.stdin)["devices"]
+          c=[x for r,v in d.items() if "iOS" in r for x in v if x["name"].startswith("iPhone") and "Pro" in x["name"] and "Max" not in x["name"]]
+          print(c[-1]["udid"])')
+          echo "DEVICE=$DEVICE" >> "$GITHUB_ENV"
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b
+          xcrun simctl install "$DEVICE" "$APP"
+          # Photo for the photo-logging flow
+          xcrun simctl addmedia "$DEVICE" mobile/.maestro/assets/meal.jpg
+          xcrun simctl privacy "$DEVICE" grant photos com.raymondzhao3000.forma || true
+          xcrun simctl privacy "$DEVICE" grant camera com.raymondzhao3000.forma || true
+          xcrun simctl privacy "$DEVICE" grant microphone com.raymondzhao3000.forma || true
+
+      - name: Install Maestro
+        run: |
+          curl -fsSL "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> "$GITHUB_PATH"
+
+      - name: Run flows
+        working-directory: mobile
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/e2e-out"
+          xcrun simctl io "$DEVICE" recordVideo --codec h264 "$GITHUB_WORKSPACE/e2e-out/run.mp4" &
+          REC=$!
+          set +e
+          maestro --device "$DEVICE" test ".maestro/${{ inputs.flows }}" \
+            --env RUN_ID=${{ github.run_id }} \
+            --format junit --output "$GITHUB_WORKSPACE/e2e-out/report.xml" \
+            --test-output-dir "$GITHUB_WORKSPACE/e2e-out/maestro"
+          CODE=$?
+          kill -INT $REC; sleep 3
+          exit $CODE
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nibble-e2e-results
+          path: e2e-out
+          retention-days: 14

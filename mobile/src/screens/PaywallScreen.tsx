@@ -302,6 +302,21 @@ export default function PaywallScreen() {
           </TouchableOpacity>
         )}
 
+        {/* E2E simulator builds only (EXPO_PUBLIC_E2E is set by the e2e EAS profile, never production):
+            the simulator can't complete a StoreKit purchase, so tests unlock premium here */}
+        {process.env.EXPO_PUBLIC_E2E === '1' && (
+          <TouchableOpacity
+            testID="e2e-skip-paywall"
+            style={styles.signInLink}
+            onPress={() => {
+              useSubscriptionStore.setState({ isPremium: true });
+              navigation.navigate('Main' as never);
+            }}
+          >
+            <Text style={styles.signInLinkText}>E2E: unlock premium</Text>
+          </TouchableOpacity>
+        )}
+
         {/* Already have account */}
         <TouchableOpacity
           style={styles.signInLink}
