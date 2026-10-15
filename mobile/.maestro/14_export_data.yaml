@@ -3,7 +3,7 @@ name: Export data screen counts the logged meals
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-settings" }
-- tapOn: "Export Data"
-- extendedWaitUntil: { visible: "Export Summary", timeout: 10000 }
-- assertVisible: "Logged Meals"
+- tapOn: "Export Data[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: "Export Summary[^A-Za-z0-9]*", timeout: 10000 }
+- assertVisible: "Logged Meals[^A-Za-z0-9]*"
 - takeScreenshot: 14_export

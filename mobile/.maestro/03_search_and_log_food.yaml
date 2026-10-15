@@ -2,8 +2,8 @@ appId: com.raymondzhao3000.forma
 name: Search the food database and log a banana
 ---
 - runFlow: common/open_home.yaml
-- tapOn: "Manual"
-- extendedWaitUntil: { visible: "Search Foods", timeout: 10000 }
+- tapOn: "Manual[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: "Search Foods[^A-Za-z0-9]*", timeout: 10000 }
 - tapOn: "Search foods.*"
 - inputText: "banana"
 - extendedWaitUntil: { visible: ".*[Bb]anana.*", timeout: 30000 }
@@ -11,10 +11,10 @@ name: Search the food database and log a banana
 - tapOn:
     text: ".*[Bb]anana.*"
     index: 1
-- extendedWaitUntil: { visible: "Select Serving", timeout: 15000 }
+- extendedWaitUntil: { visible: "Select Serving[^A-Za-z0-9]*", timeout: 15000 }
 - takeScreenshot: 03b_serving
-- scrollUntilVisible: { element: "Add to Log", direction: DOWN }
-- tapOn: "Add to Log"
-- extendedWaitUntil: { visible: "Calories Left", timeout: 20000 }
+- scrollUntilVisible: { element: "Add to Log[^A-Za-z0-9]*", direction: DOWN }
+- tapOn: "Add to Log[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: "Calories Left[^A-Za-z0-9]*", timeout: 20000 }
 - scrollUntilVisible: { element: ".*[Bb]anana.*", direction: DOWN }
 - takeScreenshot: 03c_logged

@@ -3,24 +3,24 @@ name: Sign out, sign back in with email, logged meals are still there
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-settings" }
-- scrollUntilVisible: { element: "Sign Out", direction: DOWN }
-- tapOn: "Sign Out"
-- tapOn: { text: "Sign Out", optional: true }
-- extendedWaitUntil: { visible: "Get Started", timeout: 20000 }
-- tapOn: "I already have an account →"
-- extendedWaitUntil: { visible: "Welcome back.", timeout: 10000 }
-- tapOn: "you@example.com"
+- scrollUntilVisible: { element: "Sign Out[^A-Za-z0-9]*", direction: DOWN }
+- tapOn: "Sign Out[^A-Za-z0-9]*"
+- tapOn: { text: "Sign Out[^A-Za-z0-9]*", optional: true }
+- extendedWaitUntil: { visible: "Get Started[^A-Za-z0-9]*", timeout: 20000 }
+- tapOn: "I already have an account →[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: "Welcome back\\.[^A-Za-z0-9]*", timeout: 10000 }
+- tapOn: "you@example\\.com[^A-Za-z0-9]*"
 - inputText: "nibble-e2e+${RUN_ID}@tryforma.app"
-- tapOn: "••••••••"
+- tapOn: "••••••••[^A-Za-z0-9]*"
 - inputText: "${E2E_PASSWORD}"
 - hideKeyboard
-- tapOn: "Sign In"
+- tapOn: "Sign In[^A-Za-z0-9]*"
 - extendedWaitUntil:
     visible: "Calories Left|E2E: unlock premium"
     timeout: 60000
 - runFlow:
-    when: { visible: "E2E: unlock premium" }
-    commands: [ { tapOn: "E2E: unlock premium" } ]
-- extendedWaitUntil: { visible: "Calories Left", timeout: 30000 }
+    when: { visible: "E2E: unlock premium[^A-Za-z0-9]*" }
+    commands: [ { tapOn: "E2E: unlock premium[^A-Za-z0-9]*" } ]
+- extendedWaitUntil: { visible: "Calories Left[^A-Za-z0-9]*", timeout: 30000 }
 - scrollUntilVisible: { element: ".*[Bb]anana.*|E2E Stew", direction: DOWN }
 - takeScreenshot: 16_signed_back_in

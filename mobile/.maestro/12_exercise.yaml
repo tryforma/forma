@@ -3,7 +3,7 @@ name: Exercise screen and logging a workout
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-exercise" }
-- extendedWaitUntil: { visible: "Cal Burned Today", timeout: 10000 }
+- extendedWaitUntil: { visible: "Cal Burned Today[^A-Za-z0-9]*", timeout: 10000 }
 - takeScreenshot: 12a_exercise
 - tapOn:
     text: "Log Exercise|.*Add.*"
@@ -11,7 +11,7 @@ name: Exercise screen and logging a workout
 - waitForAnimationToEnd
 - takeScreenshot: 12b_log_form
 - tapOn: { text: "Running|Walking|.*Run.*", index: 0, optional: true }
-- tapOn: { text: "30", optional: true }
+- tapOn: { text: "30[^A-Za-z0-9]*", optional: true }
 - inputText: "25"
 - hideKeyboard
 - tapOn: { text: "Log Exercise|Save|Log It", index: 0 }

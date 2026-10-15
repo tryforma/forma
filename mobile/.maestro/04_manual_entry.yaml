@@ -2,8 +2,8 @@ appId: com.raymondzhao3000.forma
 name: Log a meal by hand (Manual Entry)
 ---
 - runFlow: common/open_home.yaml
-- tapOn: "Manual"
-- extendedWaitUntil: { visible: "Search Foods", timeout: 10000 }
+- tapOn: "Manual[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: "Search Foods[^A-Za-z0-9]*", timeout: 10000 }
 - tapOn: "Search foods.*"
 - inputText: "zzqx homemade e2e stew"
 - extendedWaitUntil: { visible: "No foods found|.*[Mm]anual.*", timeout: 30000 }
@@ -11,14 +11,14 @@ name: Log a meal by hand (Manual Entry)
 - tapOn:
     text: ".*[Mm]anual.*|.*[Aa]dd [Cc]ustom.*|.*[Cc]reate.*"
     optional: true
-- extendedWaitUntil: { visible: "Manual Entry", timeout: 10000 }
-- tapOn: "e.g., Chicken Breast"
+- extendedWaitUntil: { visible: "Manual Entry[^A-Za-z0-9]*", timeout: 10000 }
+- tapOn: "e\\.g\\., Chicken Breast[^A-Za-z0-9]*"
 - inputText: "E2E Stew"
-- tapOn: "e.g., 250"
+- tapOn: "e\\.g\\., 250[^A-Za-z0-9]*"
 - inputText: "420"
 - hideKeyboard
-- scrollUntilVisible: { element: "Add to Log", direction: DOWN }
-- tapOn: "Add to Log"
-- extendedWaitUntil: { visible: "Calories Left", timeout: 20000 }
-- scrollUntilVisible: { element: "E2E Stew", direction: DOWN }
+- scrollUntilVisible: { element: "Add to Log[^A-Za-z0-9]*", direction: DOWN }
+- tapOn: "Add to Log[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: "Calories Left[^A-Za-z0-9]*", timeout: 20000 }
+- scrollUntilVisible: { element: "E2E Stew[^A-Za-z0-9]*", direction: DOWN }
 - takeScreenshot: 04b_logged
