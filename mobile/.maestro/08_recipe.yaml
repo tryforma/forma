@@ -1,0 +1,22 @@
+appId: com.raymondzhao3000.forma
+name: Create a recipe with one ingredient
+---
+- runFlow: common/open_home.yaml
+- tapOn: "Recipe"
+- extendedWaitUntil: { visible: "My Recipes", timeout: 10000 }
+- tapOn: "Create Recipe"
+- tapOn: "e.g., Chicken Stir Fry"
+- inputText: "E2E Rice Bowl"
+- tapOn: "Search for food..."
+- inputText: "rice"
+- extendedWaitUntil: { visible: ".*[Rr]ice.*", timeout: 30000 }
+- tapOn:
+    text: ".*[Rr]ice.*"
+    index: 1
+- extendedWaitUntil: { visible: "Add to Recipe", timeout: 10000 }
+- tapOn: "Add to Recipe"
+- takeScreenshot: 08a_builder
+- scrollUntilVisible: { element: "Save Recipe", direction: DOWN }
+- tapOn: "Save Recipe"
+- extendedWaitUntil: { visible: "E2E Rice Bowl", timeout: 15000 }
+- takeScreenshot: 08b_saved

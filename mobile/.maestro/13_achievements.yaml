@@ -1,0 +1,8 @@
+appId: com.raymondzhao3000.forma
+name: Achievements screen
+---
+- runFlow: common/open_home.yaml
+- tapOn: { id: "home-achievements" }
+- extendedWaitUntil: { visible: "Your Progress", timeout: 10000 }
+- assertVisible: "Earned"
+- takeScreenshot: 13_achievements

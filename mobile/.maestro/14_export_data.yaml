@@ -1,0 +1,9 @@
+appId: com.raymondzhao3000.forma
+name: Export data screen counts the logged meals
+---
+- runFlow: common/open_home.yaml
+- tapOn: { id: "home-settings" }
+- tapOn: "Export Data"
+- extendedWaitUntil: { visible: "Export Summary", timeout: 10000 }
+- assertVisible: "Logged Meals"
+- takeScreenshot: 14_export

@@ -113,7 +113,7 @@ jobs:
           REC=$!
           set +e
           maestro --device "$DEVICE" test ".maestro/${{ inputs.flows }}" \
-            --env RUN_ID=${{ github.run_id }} \
+            --env RUN_ID=${{ github.run_id }} --env E2E_PASSWORD=e2e-75bbf3641816 \
             --format junit --output "$GITHUB_WORKSPACE/e2e-out/report.xml" \
             --test-output-dir "$GITHUB_WORKSPACE/e2e-out/maestro"
           CODE=$?

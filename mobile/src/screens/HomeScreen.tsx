@@ -425,30 +425,40 @@ export default function HomeScreen() {
         />
         <View style={{ flexDirection: 'row', gap: 12 }}>
           <TouchableOpacity
+            testID="home-achievements"
+            accessibilityLabel="Achievements"
             onPress={() => navigation.navigate('Achievements' as never)}
             style={[dynamicStyles.signOutButton, { marginRight: 0 }]}
           >
             <Ionicons name="trophy" size={18} color={colors.textSecondary} />
           </TouchableOpacity>
           <TouchableOpacity
+            testID="home-exercise"
+            accessibilityLabel="Exercise"
             onPress={() => navigation.navigate('Exercise' as never)}
             style={[dynamicStyles.signOutButton, { marginRight: 0 }]}
           >
             <Ionicons name="fitness" size={18} color={colors.textSecondary} />
           </TouchableOpacity>
           <TouchableOpacity
+            testID="home-mealhistory"
+            accessibilityLabel="Meal history"
             onPress={() => navigation.navigate('MealHistory' as never)}
             style={[dynamicStyles.signOutButton, { marginRight: 0 }]}
           >
             <Ionicons name="calendar" size={18} color={colors.textSecondary} />
           </TouchableOpacity>
           <TouchableOpacity
+            testID="home-progress"
+            accessibilityLabel="Progress"
             onPress={() => navigation.navigate('Progress' as never)}
             style={[dynamicStyles.signOutButton, { marginRight: 0 }]}
           >
             <Ionicons name="stats-chart" size={18} color={colors.textSecondary} />
           </TouchableOpacity>
           <TouchableOpacity
+            testID="home-settings"
+            accessibilityLabel="Settings"
             onPress={() => navigation.navigate('Settings' as never)}
             style={[dynamicStyles.signOutButton, { marginRight: 0 }]}
           >

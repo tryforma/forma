@@ -1,0 +1,19 @@
+# Relaunch (keeping the signed-in account) and get to Home; the e2e build re-shows the paywall
+# after a relaunch because the test unlock lives only in memory.
+appId: com.raymondzhao3000.forma
+---
+- launchApp:
+    permissions:
+      all: allow
+- extendedWaitUntil:
+    visible:
+      text: "Calories Left|E2E: unlock premium"
+    timeout: 60000
+- runFlow:
+    when:
+      visible: "E2E: unlock premium"
+    commands:
+      - tapOn: "E2E: unlock premium"
+- extendedWaitUntil:
+    visible: "Calories Left"
+    timeout: 30000

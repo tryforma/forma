@@ -1,0 +1,78 @@
+appId: com.raymondzhao3000.forma
+name: Welcome → onboarding → sign up → paywall (prices, no free escape, no Lifetime)
+---
+- launchApp:
+    clearState: true
+    permissions:
+      all: allow
+- extendedWaitUntil:
+    visible: "Get Started"
+    timeout: 60000
+- takeScreenshot: 01a_welcome
+- tapOn: "Get Started"
+# Goal
+- extendedWaitUntil: { visible: "What's your primary goal?", timeout: 20000 }
+- tapOn: "Fat Loss"
+- tapOn: "Continue"
+# Height / weight / goal weight / age use pre-filled pickers
+- extendedWaitUntil: { visible: "How tall are you?", timeout: 10000 }
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "What's your current weight?", timeout: 10000 }
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "What's your goal weight?", timeout: 10000 }
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "How old are you?", timeout: 10000 }
+- tapOn: "Continue"
+# Feature intro
+- extendedWaitUntil: { visible: "Photo logging", timeout: 10000 }
+- scrollUntilVisible: { element: "Continue", direction: DOWN }
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "How active are you?", timeout: 10000 }
+- tapOn: "Light mover"
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "15 minutes", timeout: 10000 }
+- tapOn: "15 minutes"
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "Any dietary preferences?", timeout: 10000 }
+- tapOn: "No restrictions"
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "What's held you back in the past?", timeout: 10000 }
+- tapOn: "Not enough time"
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "Your daily calorie target", timeout: 10000 }
+- scrollUntilVisible: { element: "Continue", direction: DOWN }
+- tapOn: "Continue"
+- extendedWaitUntil: { visible: "How do you want to be coached?", timeout: 10000 }
+- tapOn: "Guided"
+- tapOn: "Build My Plan"
+# Labor-illusion screen moves on by itself
+- extendedWaitUntil: { visible: "Your transformation roadmap", timeout: 30000 }
+- takeScreenshot: 01b_blueprint
+- scrollUntilVisible: { element: "Start My Free Trial", direction: DOWN }
+- tapOn: "Start My Free Trial"
+# Sign up
+- extendedWaitUntil: { visible: "Create account.", timeout: 10000 }
+- tapOn: "you@example.com"
+- inputText: "nibble-e2e+${RUN_ID}@tryforma.app"
+- tapOn: "At least 6 characters"
+- inputText: "${E2E_PASSWORD}"
+- tapOn: "Re-enter password"
+- inputText: "${E2E_PASSWORD}"
+- hideKeyboard
+- tapOn: "Create Account"
+# Paywall
+- extendedWaitUntil: { visible: "Choose your plan", timeout: 60000 }
+- extendedWaitUntil: { visible: "$49.99", timeout: 30000 }
+- takeScreenshot: 01c_paywall
+- assertVisible: "Annual"
+- assertVisible: "Monthly"
+- assertVisible: "$9.99"
+- assertVisible: ".*SAVE 58%.*"
+- assertNotVisible: "Lifetime"
+# Plans loaded, so the free escape must be hidden
+- assertNotVisible: "Continue with the free version"
+- assertVisible: "Start My Free Trial"
+- scrollUntilVisible: { element: "E2E: unlock premium", direction: DOWN }
+- tapOn: "E2E: unlock premium"
+- extendedWaitUntil: { visible: "Calories Left", timeout: 30000 }
+- takeScreenshot: 01d_home

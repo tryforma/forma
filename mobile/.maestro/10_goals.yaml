@@ -1,0 +1,19 @@
+appId: com.raymondzhao3000.forma
+name: Change the daily calorie goal and see it on Home
+---
+- runFlow: common/open_home.yaml
+- tapOn: { id: "home-settings" }
+- extendedWaitUntil: { visible: "Settings", timeout: 10000 }
+- tapOn: "Daily Goals"
+- extendedWaitUntil: { visible: "Calorie Goal", timeout: 10000 }
+- takeScreenshot: 10a_goals
+- tapOn:
+    text: "Edit Goal"
+    index: 0
+- eraseText: 6
+- inputText: "1888"
+- tapOn: "Save"
+- assertVisible: ".*1,?888.*"
+- takeScreenshot: 10b_goal_saved
+- runFlow: common/open_home.yaml
+- assertVisible: ".*1,?888.*"

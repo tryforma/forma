@@ -97,7 +97,15 @@
           "iosUrlScheme": "com.googleusercontent.apps.311242226872-4jrv4kndh6j0s974u1h0uqbj4bvmp3af"
         }
       ],
-      "./plugins/withFmtXcode26Fix.js"
+      "./plugins/withFmtXcode26Fix.js",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Nibble uses your photos so you can log a meal from a picture you already took.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ]
     ],
     "extra": {
       "eas": {

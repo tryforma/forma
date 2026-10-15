@@ -1,0 +1,19 @@
+appId: com.raymondzhao3000.forma
+name: Exercise screen and logging a workout
+---
+- runFlow: common/open_home.yaml
+- tapOn: { id: "home-exercise" }
+- extendedWaitUntil: { visible: "Cal Burned Today", timeout: 10000 }
+- takeScreenshot: 12a_exercise
+- tapOn:
+    text: "Log Exercise|.*Add.*"
+    index: 0
+- waitForAnimationToEnd
+- takeScreenshot: 12b_log_form
+- tapOn: { text: "Running|Walking|.*Run.*", index: 0, optional: true }
+- tapOn: { text: "30", optional: true }
+- inputText: "25"
+- hideKeyboard
+- tapOn: { text: "Log Exercise|Save|Log It", index: 0 }
+- waitForAnimationToEnd
+- takeScreenshot: 12c_logged

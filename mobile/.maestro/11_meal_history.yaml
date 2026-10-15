@@ -1,0 +1,9 @@
+appId: com.raymondzhao3000.forma
+name: Meal history shows today's logged meals
+---
+- runFlow: common/open_home.yaml
+- tapOn: { id: "home-mealhistory" }
+- extendedWaitUntil: { visible: "Meal History", timeout: 10000 }
+- assertVisible: "Daily Summary"
+- assertNotVisible: "No meals logged"
+- takeScreenshot: 11_history

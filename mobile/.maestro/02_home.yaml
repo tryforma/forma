@@ -1,0 +1,16 @@
+appId: com.raymondzhao3000.forma
+name: Home shows targets, macros and log buttons
+---
+- runFlow: common/open_home.yaml
+- assertVisible: "Calories Left"
+- assertVisible: "Protein"
+- assertVisible: "Carbs"
+- assertVisible: "Fat"
+- assertVisible: "Log Food"
+- assertVisible: "Photo"
+- assertVisible: "Scan"
+- assertVisible: "Voice"
+- assertVisible: "Manual"
+- assertVisible: "Recipe"
+- scrollUntilVisible: { element: "Today's Meals", direction: DOWN }
+- takeScreenshot: 02_home

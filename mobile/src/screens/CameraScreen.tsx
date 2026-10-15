@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert, ActivityIndicator, AppState, Linking } from 'react-native';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+import * as ImagePicker from 'expo-image-picker';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { analyzeFoodPhoto } from '../services/foodRecognitionService';
 import { Ionicons } from '@expo/vector-icons';
@@ -87,11 +88,29 @@ export default function CameraScreen() {
         }
 
         console.log('📸 Photo captured, analyzing...');
+        await analyzePhoto(photo.uri);
+      } catch (error: any) {
+        setAnalyzing(false);
+        console.error('Camera error:', error);
+        Alert.alert('Error', error.message || 'Failed to take photo. Please try again.', [{ text: 'OK' }]);
+      }
+    }
+  };
 
-        // Try real API first, fallback to mock if no API key
+  // Pick an existing photo (e.g. one taken earlier at the table) and analyze it
+  const pickFromLibrary = async () => {
+    if (analyzing) return;
+    const picked = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], quality: 0.6 });
+    if (picked.canceled || !picked.assets?.length) return;
+    setAnalyzing(true);
+    await analyzePhoto(picked.assets[0].uri);
+  };
+
+  const analyzePhoto = async (uri: string) => {
+      try {
         let result;
         try {
-          result = await analyzeFoodPhoto(photo.uri);
+          result = await analyzeFoodPhoto(uri);
         } catch (apiError: any) {
           if (apiError.message.includes('API Key is missing')) {
             console.log('⚠️ API Key missing - user needs to check EAS secrets');
@@ -125,7 +144,6 @@ export default function CameraScreen() {
           [{ text: 'OK' }]
         );
       }
-    }
   };
 
   return (
@@ -189,7 +207,15 @@ export default function CameraScreen() {
               )}
             </TouchableOpacity>
 
-            <View style={styles.flipButton} />
+            <TouchableOpacity
+              testID="camera-pick-library"
+              accessibilityLabel="Choose from library"
+              style={styles.flipButton}
+              onPress={pickFromLibrary}
+              disabled={analyzing}
+            >
+              <Ionicons name="images" size={26} color="#FFF" />
+            </TouchableOpacity>
           </View>
         </>
       )}

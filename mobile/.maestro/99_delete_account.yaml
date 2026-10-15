@@ -1,0 +1,10 @@
+appId: com.raymondzhao3000.forma
+name: Delete the test account
+---
+- runFlow: common/open_home.yaml
+- tapOn: { id: "home-settings" }
+- scrollUntilVisible: { element: "Delete Account", direction: DOWN }
+- tapOn: "Delete Account"
+- tapOn: "Delete"
+- extendedWaitUntil: { visible: "Get Started", timeout: 30000 }
+- takeScreenshot: 99_deleted

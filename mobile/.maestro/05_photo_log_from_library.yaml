@@ -1,0 +1,28 @@
+appId: com.raymondzhao3000.forma
+name: Photo log - pick the meal photo from the library and get AI calories
+---
+- runFlow: common/open_home.yaml
+- tapOn: "Photo"
+- extendedWaitUntil: { visible: "Take Photo|Continue", timeout: 15000 }
+- runFlow:
+    when: { visible: "Continue" }
+    commands: [ { tapOn: "Continue" } ]
+- takeScreenshot: 05a_camera
+- tapOn:
+    id: "camera-pick-library"
+- waitForAnimationToEnd
+- takeScreenshot: 05b_picker
+# The meal photo was added last, so it's the newest item in the picker grid
+- tapOn:
+    text: "Photo.*"
+    index: 0
+    optional: true
+- waitForAnimationToEnd
+- tapOn:
+    text: "Add|Done|Choose"
+    optional: true
+- extendedWaitUntil: { visible: "Total Calories", timeout: 90000 }
+- takeScreenshot: 05c_results
+- assertVisible: "Identified Foods"
+- scrollUntilVisible: { element: "Add to Log|.*Log.*", direction: DOWN }
+- takeScreenshot: 05d_results_bottom

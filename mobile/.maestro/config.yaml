@@ -1,0 +1,21 @@
+# Flows share one throwaway account (nibble-e2e+<run id>@tryforma.app) created in 01 and deleted in 99.
+executionOrder:
+  continueOnFailure: true
+  flowsOrder:
+    - 01_onboarding_signup_paywall
+    - 02_home
+    - 03_search_and_log_food
+    - 04_manual_entry
+    - 05_photo_log_from_library
+    - 06_barcode_screen
+    - 07_voice_screen
+    - 08_recipe
+    - 09_progress_and_weight
+    - 10_goals
+    - 11_meal_history
+    - 12_exercise
+    - 13_achievements
+    - 14_export_data
+    - 15_settings_sources_legal
+    - 16_sign_out_sign_in
+    - 99_delete_account

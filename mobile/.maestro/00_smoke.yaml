@@ -1,9 +1,0 @@
-appId: com.raymondzhao3000.forma
-name: Smoke - app launches to Welcome
----
-- launchApp:
-    clearState: true
-- extendedWaitUntil:
-    visible: "Get Started"
-    timeout: 60000
-- takeScreenshot: 00_welcome
