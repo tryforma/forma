@@ -36,7 +36,7 @@ const BENEFITS = [
   { icon: 'flash', text: 'Never wonder what to eat again', sub: 'AI builds your meal plan around your macros' },
   { icon: 'time', text: 'Log any meal in under 30 seconds', sub: 'Camera scan, voice, or search — your choice' },
   { icon: 'body-outline', text: 'Personalised to your body', sub: 'Macros calculated from your height, weight, age and goals' },
-  { icon: 'shield-checkmark', text: 'Cancel anytime — no commitment', sub: '7-day free trial, money-back guarantee' },
+  { icon: 'shield-checkmark', text: 'Cancel anytime — no commitment', sub: '7 days free, cancel in Settings before it ends' },
 ];
 
 const getTrialEndDate = () => {
@@ -67,10 +67,14 @@ export default function PaywallScreen() {
   // Displayed prices — use real prices from RC, fall back to static
   const annualMonthly = annualPkg
     ? `$${(annualPkg.product.price / 12).toFixed(2)}`
-    : '$4.99';
-  const annualFull = annualPkg?.product.priceString ?? '$59.99';
-  const monthlyPrice = monthlyPkg?.product.priceString ?? '$14.99';
-  const lifetimePrice = lifetimePkg?.product.priceString ?? '$149';
+    : '$4.17';
+  const annualFull = annualPkg?.product.priceString ?? '$49.99';
+  const monthlyPrice = monthlyPkg?.product.priceString ?? '$9.99';
+  const lifetimePrice = lifetimePkg?.product.priceString ?? '';
+  // Savings vs paying monthly for a year, from the real store prices
+  const annualSavePct = annualPkg && monthlyPkg && monthlyPkg.product.price > 0
+    ? Math.round((1 - annualPkg.product.price / (monthlyPkg.product.price * 12)) * 100)
+    : 58;
 
   const handleStartTrial = async () => {
     trackCustomEvent('paywall_cta_tap', { plan: selectedPlan, loading: offeringLoading ? 1 : 0 }).catch(() => {});
@@ -175,7 +179,7 @@ export default function PaywallScreen() {
           activeOpacity={0.8}
         >
           <View style={styles.bestValueBadge}>
-            <Text style={styles.bestValueText}>BEST VALUE · SAVE 67%</Text>
+            <Text style={styles.bestValueText}>BEST VALUE · SAVE {annualSavePct}%</Text>
           </View>
           <View style={styles.planCardInner}>
             <View style={styles.planRadio}>
@@ -214,26 +218,28 @@ export default function PaywallScreen() {
           </View>
         </TouchableOpacity>
 
-        {/* Lifetime */}
-        <TouchableOpacity
-          style={[styles.planCard, selectedPlan === 'lifetime' && styles.planCardSelectedSecondary]}
-          onPress={() => setSelectedPlan('lifetime')}
-          activeOpacity={0.8}
-        >
-          <View style={styles.planCardInner}>
-            <View style={styles.planRadio}>
-              <View style={[styles.radioInner, selectedPlan === 'lifetime' && styles.radioInnerSecondary]} />
+        {/* Lifetime — only when the store actually sells it */}
+        {lifetimePkg && (
+          <TouchableOpacity
+            style={[styles.planCard, selectedPlan === 'lifetime' && styles.planCardSelectedSecondary]}
+            onPress={() => setSelectedPlan('lifetime')}
+            activeOpacity={0.8}
+          >
+            <View style={styles.planCardInner}>
+              <View style={styles.planRadio}>
+                <View style={[styles.radioInner, selectedPlan === 'lifetime' && styles.radioInnerSecondary]} />
+              </View>
+              <View style={styles.planInfo}>
+                <Text style={styles.planName}>Lifetime</Text>
+                <Text style={styles.planBilling}>One-time payment, forever</Text>
+              </View>
+              <View style={styles.planPrice}>
+                <Text style={styles.mainPriceNeutral}>{lifetimePrice}</Text>
+                <Text style={styles.perPeriod}>once</Text>
+              </View>
             </View>
-            <View style={styles.planInfo}>
-              <Text style={styles.planName}>Lifetime</Text>
-              <Text style={styles.planBilling}>One-time payment, forever</Text>
-            </View>
-            <View style={styles.planPrice}>
-              <Text style={styles.mainPriceNeutral}>{lifetimePrice}</Text>
-              <Text style={styles.perPeriod}>once</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        )}
 
         {/* CTA */}
         <TouchableOpacity
@@ -261,7 +267,7 @@ export default function PaywallScreen() {
 
         {/* Risk reversal */}
         <View style={styles.riskReversal}>
-          {['Cancel anytime', 'Money-back guarantee', 'No commitment'].map((item, i) => (
+          {['Cancel anytime', 'No charge today', 'No commitment'].map((item, i) => (
             <View key={i} style={styles.riskItem}>
               <Ionicons name="checkmark" size={14} color={C.accent} />
               <Text style={styles.riskText}>{item}</Text>
@@ -282,17 +288,19 @@ export default function PaywallScreen() {
           </Text>
         </View>
 
-        {/* Continue on the free tier: the paywall must never be a dead end */}
-        <TouchableOpacity
-          style={styles.signInLink}
-          onPress={() => {
-            trackCustomEvent('paywall_continue_free', { plan: selectedPlan, had_offering: offering ? 1 : 0 }).catch(() => {});
-            navigation.navigate('Main' as never);
-          }}
-          disabled={isPurchasing}
-        >
-          <Text style={styles.signInLinkText}>Continue with the free version</Text>
-        </TouchableOpacity>
+        {/* Continue free only when the store can't load plans, so the paywall is never a dead end */}
+        {!offering && !offeringLoading && (
+          <TouchableOpacity
+            style={styles.signInLink}
+            onPress={() => {
+              trackCustomEvent('paywall_continue_free', { plan: selectedPlan, had_offering: 0 }).catch(() => {});
+              navigation.navigate('Main' as never);
+            }}
+            disabled={isPurchasing}
+          >
+            <Text style={styles.signInLinkText}>Continue with the free version</Text>
+          </TouchableOpacity>
+        )}
 
         {/* Already have account */}
         <TouchableOpacity
