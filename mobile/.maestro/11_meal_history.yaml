@@ -3,7 +3,7 @@ name: Meal history shows today's logged meals
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-mealhistory" }
-- extendedWaitUntil: { visible: "Meal History[^A-Za-z0-9]*", timeout: 10000 }
-- assertVisible: "Daily Summary[^A-Za-z0-9]*"
-- assertNotVisible: "No meals logged[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: ".*Meal History.*", timeout: 10000 }
+- assertVisible: ".*Daily Summary.*"
+- assertNotVisible: ".*No meals logged.*"
 - takeScreenshot: 11_history

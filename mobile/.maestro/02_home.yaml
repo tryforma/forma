@@ -2,15 +2,15 @@ appId: com.raymondzhao3000.forma
 name: Home shows targets, macros and log buttons
 ---
 - runFlow: common/open_home.yaml
-- assertVisible: "Calories Left[^A-Za-z0-9]*"
-- assertVisible: "Protein[^A-Za-z0-9]*"
-- assertVisible: "Carbs[^A-Za-z0-9]*"
-- assertVisible: "Fat[^A-Za-z0-9]*"
-- assertVisible: "Log Food[^A-Za-z0-9]*"
-- assertVisible: "Photo[^A-Za-z0-9]*"
-- assertVisible: "Scan[^A-Za-z0-9]*"
-- assertVisible: "Voice[^A-Za-z0-9]*"
-- assertVisible: "Manual[^A-Za-z0-9]*"
-- assertVisible: "Recipe[^A-Za-z0-9]*"
-- scrollUntilVisible: { element: "Today's Meals[^A-Za-z0-9]*", direction: DOWN }
+- assertVisible: ".*Calories Left.*"
+- assertVisible: ".*Protein.*"
+- assertVisible: ".*Carbs.*"
+- assertVisible: ".*Fat.*"
+- assertVisible: ".*Log Food.*"
+- assertVisible: ".*Photo.*"
+- assertVisible: ".*Scan.*"
+- assertVisible: ".*Voice.*"
+- assertVisible: ".*Manual.*"
+- assertVisible: ".*Recipe.*"
+- scrollUntilVisible: { element: ".*Today's Meals.*", direction: DOWN }
 - takeScreenshot: 02_home

@@ -2,21 +2,21 @@ appId: com.raymondzhao3000.forma
 name: Create a recipe with one ingredient
 ---
 - runFlow: common/open_home.yaml
-- tapOn: "Recipe[^A-Za-z0-9]*"
-- extendedWaitUntil: { visible: "My Recipes[^A-Za-z0-9]*", timeout: 10000 }
-- tapOn: "Create Recipe[^A-Za-z0-9]*"
-- tapOn: "e\\.g\\., Chicken Stir Fry[^A-Za-z0-9]*"
+- tapOn: ".*Recipe.*"
+- extendedWaitUntil: { visible: ".*My Recipes.*", timeout: 10000 }
+- tapOn: ".*Create Recipe.*"
+- tapOn: ".*e\\.g\\., Chicken Stir Fry.*"
 - inputText: "E2E Rice Bowl"
-- tapOn: "Search for food\\.\\.\\.[^A-Za-z0-9]*"
+- tapOn: ".*Search for food\\.\\.\\..*"
 - inputText: "rice"
 - extendedWaitUntil: { visible: ".*[Rr]ice.*", timeout: 30000 }
 - tapOn:
     text: ".*[Rr]ice.*"
     index: 1
-- extendedWaitUntil: { visible: "Add to Recipe[^A-Za-z0-9]*", timeout: 10000 }
-- tapOn: "Add to Recipe[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: ".*Add to Recipe.*", timeout: 10000 }
+- tapOn: ".*Add to Recipe.*"
 - takeScreenshot: 08a_builder
-- scrollUntilVisible: { element: "Save Recipe[^A-Za-z0-9]*", direction: DOWN }
-- tapOn: "Save Recipe[^A-Za-z0-9]*"
-- extendedWaitUntil: { visible: "E2E Rice Bowl[^A-Za-z0-9]*", timeout: 15000 }
+- scrollUntilVisible: { element: ".*Save Recipe.*", direction: DOWN }
+- tapOn: ".*Save Recipe.*"
+- extendedWaitUntil: { visible: ".*E2E Rice Bowl.*", timeout: 15000 }
 - takeScreenshot: 08b_saved

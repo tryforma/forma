@@ -3,8 +3,8 @@ name: Delete the test account
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-settings" }
-- scrollUntilVisible: { element: "Delete Account[^A-Za-z0-9]*", direction: DOWN }
-- tapOn: "Delete Account[^A-Za-z0-9]*"
-- tapOn: "Delete[^A-Za-z0-9]*"
-- extendedWaitUntil: { visible: "Get Started[^A-Za-z0-9]*", timeout: 30000 }
+- scrollUntilVisible: { element: ".*Delete Account.*", direction: DOWN }
+- tapOn: ".*Delete Account.*"
+- tapOn: "Delete"
+- extendedWaitUntil: { visible: ".*Get Started.*", timeout: 30000 }
 - takeScreenshot: 99_deleted

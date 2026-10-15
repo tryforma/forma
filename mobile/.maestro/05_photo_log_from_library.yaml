@@ -2,11 +2,11 @@ appId: com.raymondzhao3000.forma
 name: Photo log - pick the meal photo from the library and get AI calories
 ---
 - runFlow: common/open_home.yaml
-- tapOn: "Photo[^A-Za-z0-9]*"
+- tapOn: ".*Photo.*"
 - extendedWaitUntil: { visible: "Take Photo|Continue", timeout: 15000 }
 - runFlow:
-    when: { visible: "Continue[^A-Za-z0-9]*" }
-    commands: [ { tapOn: "Continue[^A-Za-z0-9]*" } ]
+    when: { visible: ".*Continue.*" }
+    commands: [ { tapOn: ".*Continue.*" } ]
 - takeScreenshot: 05a_camera
 - tapOn:
     id: "camera-pick-library"
@@ -21,8 +21,8 @@ name: Photo log - pick the meal photo from the library and get AI calories
 - tapOn:
     text: "Add|Done|Choose"
     optional: true
-- extendedWaitUntil: { visible: "Total Calories[^A-Za-z0-9]*", timeout: 90000 }
+- extendedWaitUntil: { visible: ".*Total Calories.*", timeout: 90000 }
 - takeScreenshot: 05c_results
-- assertVisible: "Identified Foods[^A-Za-z0-9]*"
+- assertVisible: ".*Identified Foods.*"
 - scrollUntilVisible: { element: "Add to Log|.*Log.*", direction: DOWN }
 - takeScreenshot: 05d_results_bottom

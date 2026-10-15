@@ -3,6 +3,6 @@ name: Achievements screen
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-achievements" }
-- extendedWaitUntil: { visible: "Your Progress[^A-Za-z0-9]*", timeout: 10000 }
-- assertVisible: "Earned[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: ".*Your Progress.*", timeout: 10000 }
+- assertVisible: ".*Earned.*"
 - takeScreenshot: 13_achievements

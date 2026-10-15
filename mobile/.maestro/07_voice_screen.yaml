@@ -2,7 +2,7 @@ appId: com.raymondzhao3000.forma
 name: Voice log screen opens (the simulator mic is silent, so no transcript)
 ---
 - runFlow: common/open_home.yaml
-- tapOn: "Voice[^A-Za-z0-9]*"
+- tapOn: ".*Voice.*"
 - waitForAnimationToEnd
 - takeScreenshot: 07_voice
-- assertNotVisible: "Calories Left[^A-Za-z0-9]*"
+- assertNotVisible: ".*Calories Left.*"

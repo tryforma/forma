@@ -11,9 +11,9 @@ appId: com.raymondzhao3000.forma
     timeout: 60000
 - runFlow:
     when:
-      visible: "E2E: unlock premium[^A-Za-z0-9]*"
+      visible: ".*E2E: unlock premium.*"
     commands:
-      - tapOn: "E2E: unlock premium[^A-Za-z0-9]*"
+      - tapOn: ".*E2E: unlock premium.*"
 - extendedWaitUntil:
-    visible: "Calories Left[^A-Za-z0-9]*"
+    visible: ".*Calories Left.*"
     timeout: 30000

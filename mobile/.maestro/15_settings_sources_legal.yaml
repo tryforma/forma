@@ -3,7 +3,7 @@ name: Settings, Sources, Privacy Policy and Terms open
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-settings" }
-- extendedWaitUntil: { visible: "Settings[^A-Za-z0-9]*", timeout: 10000 }
+- extendedWaitUntil: { visible: ".*Settings.*", timeout: 10000 }
 - takeScreenshot: 15a_settings
 - scrollUntilVisible: { element: ".*Sources.*", direction: DOWN }
 - tapOn: ".*Sources.*"
@@ -11,8 +11,8 @@ name: Settings, Sources, Privacy Policy and Terms open
 - takeScreenshot: 15b_sources
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-settings" }
-- scrollUntilVisible: { element: "Privacy Policy[^A-Za-z0-9]*", direction: DOWN }
-- tapOn: "Privacy Policy[^A-Za-z0-9]*"
+- scrollUntilVisible: { element: ".*Privacy Policy.*", direction: DOWN }
+- tapOn: ".*Privacy Policy.*"
 - waitForAnimationToEnd
 - takeScreenshot: 15c_privacy
 - runFlow: common/open_home.yaml

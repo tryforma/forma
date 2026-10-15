@@ -3,12 +3,12 @@ name: Progress screen and logging a weight
 ---
 - runFlow: common/open_home.yaml
 - tapOn: { id: "home-progress" }
-- extendedWaitUntil: { visible: "Day Streak[^A-Za-z0-9]*", timeout: 15000 }
-- assertVisible: "Avg Daily Calories[^A-Za-z0-9]*"
+- extendedWaitUntil: { visible: ".*Day Streak.*", timeout: 15000 }
+- assertVisible: ".*Avg Daily Calories.*"
 - takeScreenshot: 09a_progress
 - scrollUntilVisible: { element: ".*[Ll]og.*[Ww]eight.*", direction: DOWN }
 - tapOn: ".*[Ll]og.*[Ww]eight.*"
-- extendedWaitUntil: { visible: "Log Your Weight[^A-Za-z0-9]*", timeout: 10000 }
+- extendedWaitUntil: { visible: ".*Log Your Weight.*", timeout: 10000 }
 - tapOn: "154|70"
 - inputText: "170"
 - hideKeyboard

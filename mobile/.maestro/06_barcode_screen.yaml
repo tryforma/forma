@@ -2,10 +2,10 @@ appId: com.raymondzhao3000.forma
 name: Barcode scanner opens (no camera on the simulator, so no scan)
 ---
 - runFlow: common/open_home.yaml
-- tapOn: "Scan[^A-Za-z0-9]*"
+- tapOn: ".*Scan.*"
 - extendedWaitUntil: { visible: "Scan Barcode|Continue", timeout: 15000 }
 - runFlow:
-    when: { visible: "Continue[^A-Za-z0-9]*" }
-    commands: [ { tapOn: "Continue[^A-Za-z0-9]*" } ]
+    when: { visible: ".*Continue.*" }
+    commands: [ { tapOn: ".*Continue.*" } ]
 - takeScreenshot: 06_barcode
 - assertNotVisible: "Something went wrong.*"
